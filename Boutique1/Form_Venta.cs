@@ -41,5 +41,10 @@ namespace Boutique1
         {
 
         }
+
+        private void Form_Venta_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            
+        }
     }
 }

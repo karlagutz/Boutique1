@@ -19,35 +19,7 @@ namespace Boutique1
             InitializeComponent();
         }
 
-        private void ShowNewForm(object sender, EventArgs e)
-        {
-            Form childForm = new Form();
-            childForm.MdiParent = this;
-            childForm.Text = "Window " + childFormNumber++;
-            childForm.Show();
-        }
-
-        private void OpenFile(object sender, EventArgs e)
-        {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-            openFileDialog.Filter = "Text Files (*.txt)|*.txt|All Files (*.*)|*.*";
-            if (openFileDialog.ShowDialog(this) == DialogResult.OK)
-            {
-                string FileName = openFileDialog.FileName;
-            }
-        }
-
-        private void SaveAsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-            saveFileDialog.Filter = "Text Files (*.txt)|*.txt|All Files (*.*)|*.*";
-            if (saveFileDialog.ShowDialog(this) == DialogResult.OK)
-            {
-                string FileName = saveFileDialog.FileName;
-            }
-        }
+       
 
         private void ExitToolsStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -115,13 +87,40 @@ namespace Boutique1
             {
                 fVenta = new Form_Venta();
                 fVenta.MdiParent = this;
-                // Display the new form.
+                fVenta.FormClosed += new FormClosedEventHandler(FormClosed);
+                // Display the new form
                 fVenta.Show();
             }
             else {
                 fVenta.Activate();
             }
 
+        }
+
+        private void FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Form f = (Form)sender;
+            //MessageBox.Show(f.Name);
+            switch (f.Name)
+            {
+                case "Form_Venta":
+                    fVenta = null;
+                    break;
+
+                case "Form_AgregarCliente":
+                    fAgregarCliente = null;
+                    break;
+                case "Form_Articulos":
+                    fArticulos = null;
+                    break;
+                case "Form_Clientes":
+                    fClientes = null;
+                    break;
+                case "Form_VistaPreviaReporteVentas":
+                    fVistaPrevia = null;
+                    break;
+            }
+           
         }
 
         private void Principal_Load(object sender, EventArgs e)
@@ -137,6 +136,7 @@ namespace Boutique1
             {
                 fAgregarCliente = new Form_AgregarCliente();
                 fAgregarCliente.MdiParent = this;
+                fAgregarCliente.FormClosed += new FormClosedEventHandler(FormClosed);
                 // Display the new form.
                 fAgregarCliente.Show();
             }
@@ -152,6 +152,7 @@ namespace Boutique1
             {
                 fClientes = new Form_Clientes();
                 fClientes.MdiParent = this;
+                fClientes.FormClosed += new FormClosedEventHandler(FormClosed);
                 // Display the new form.
                 fClientes.Show();
             }
@@ -167,6 +168,7 @@ namespace Boutique1
             {
                 fArticulos = new Form_Articulos();
                 fArticulos.MdiParent = this;
+                fArticulos.FormClosed += new FormClosedEventHandler(FormClosed);
                 // Display the new form.
                 fArticulos.Show();
             }
@@ -182,6 +184,7 @@ namespace Boutique1
             {
                 fVistaPrevia = new Form_VistaPreviaReporteVentas();
                 fVistaPrevia.MdiParent = this;
+                fVistaPrevia.FormClosed += new FormClosedEventHandler(FormClosed);
                 // Display the new form.
                 fVistaPrevia.Show();
             }
