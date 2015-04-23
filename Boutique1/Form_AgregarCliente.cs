@@ -16,7 +16,8 @@ namespace Boutique1
         {
             InitializeComponent();
         }
-
+        // hola karla bonita c:
+        
         private void label4_Click(object sender, EventArgs e)
         {
 
