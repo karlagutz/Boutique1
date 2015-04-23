@@ -1,0 +1,15 @@
+\\psf\home\documents\visual studio 2013\Projects\Boutique1\Boutique1\bin\Debug\Boutique1.exe.config
+\\psf\home\documents\visual studio 2013\Projects\Boutique1\Boutique1\bin\Debug\Boutique1.exe
+\\psf\home\documents\visual studio 2013\Projects\Boutique1\Boutique1\bin\Debug\Boutique1.pdb
+\\psf\home\documents\visual studio 2013\Projects\Boutique1\Boutique1\obj\Debug\Boutique1.csprojResolveAssemblyReference.cache
+\\psf\home\documents\visual studio 2013\Projects\Boutique1\Boutique1\obj\Debug\Boutique1.Form_Venta.resources
+\\psf\home\documents\visual studio 2013\Projects\Boutique1\Boutique1\obj\Debug\Boutique1.Principal.resources
+\\psf\home\documents\visual studio 2013\Projects\Boutique1\Boutique1\obj\Debug\Boutique1.Properties.Resources.resources
+\\psf\home\documents\visual studio 2013\Projects\Boutique1\Boutique1\obj\Debug\Boutique1.Login.resources
+\\psf\home\documents\visual studio 2013\Projects\Boutique1\Boutique1\obj\Debug\Boutique1.csproj.GenerateResource.Cache
+\\psf\home\documents\visual studio 2013\Projects\Boutique1\Boutique1\obj\Debug\Boutique1.exe
+\\psf\home\documents\visual studio 2013\Projects\Boutique1\Boutique1\obj\Debug\Boutique1.pdb
+\\psf\home\documents\visual studio 2013\Projects\Boutique1\Boutique1\obj\Debug\Boutique1.Form_AgregarCliente.resources
+\\psf\home\documents\visual studio 2013\Projects\Boutique1\Boutique1\obj\Debug\Boutique1.Form_Articulos.resources
+\\psf\home\documents\visual studio 2013\Projects\Boutique1\Boutique1\obj\Debug\Boutique1.Form_Clientes.resources
+\\psf\home\documents\visual studio 2013\Projects\Boutique1\Boutique1\obj\Debug\Boutique1.Form_VistaPreviaReporteVentas.resources
