@@ -10,52 +10,20 @@ using System.Windows.Forms;
 
 namespace Boutique1
 {
-    public partial class Form_Venta : Form
+    public partial class Form_Apartados : Form
     {
         
-        
-        public Form_Venta()
+        public Form_Apartados()
         {
             InitializeComponent();
         }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void bDescuento_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form_Venta_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            
-        }
         Form_Cobrar fcobrar;
-        private void bEnviar_Click(object sender, EventArgs e)
+        private void bAbonar_Click(object sender, EventArgs e)
         {
-
             if (fcobrar == null)
             {
                 fcobrar = new Form_Cobrar();
-                string tot = txtTotal.Text;
+                string tot = txtAbono.Text;
                 fcobrar.recibir_datos = tot;
                 fcobrar.MdiParent = this;
                 fcobrar.FormClosed += new FormClosedEventHandler(FormClosed);
@@ -67,7 +35,7 @@ namespace Boutique1
             {
                 fcobrar.Activate();
             }
-}
+        }
         private void FormClosed(object sender, FormClosedEventArgs e)
         {
             Form f = (Form)sender;
@@ -80,5 +48,17 @@ namespace Boutique1
             }
 
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form_Apartados_Load(object sender, EventArgs e)
+        {
+            double total = dgApartados.Rows.Cast<DataGridViewRow>().Sum(x => Convert.ToDouble(x.Cells["Credito"].Value));
+            lbSaldo.Text = "$"+ (3000 - total);
+        }
+        
     }
 }

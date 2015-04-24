@@ -56,6 +56,12 @@
     <Compile Include="Form_AgregarCliente.Designer.cs">
       <DependentUpon>Form_AgregarCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_Apartados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Apartados.Designer.cs">
+      <DependentUpon>Form_Apartados.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_Articulos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,6 +73,12 @@
     </Compile>
     <Compile Include="Form_Clientes.Designer.cs">
       <DependentUpon>Form_Clientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Cobrar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Cobrar.Designer.cs">
+      <DependentUpon>Form_Cobrar.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_Venta.cs">
       <SubType>Form</SubType>
@@ -97,11 +109,17 @@
     <EmbeddedResource Include="Form_AgregarCliente.resx">
       <DependentUpon>Form_AgregarCliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form_Apartados.resx">
+      <DependentUpon>Form_Apartados.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_Articulos.resx">
       <DependentUpon>Form_Articulos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Clientes.resx">
       <DependentUpon>Form_Clientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Cobrar.resx">
+      <DependentUpon>Form_Cobrar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Venta.resx">
       <DependentUpon>Form_Venta.cs</DependentUpon>

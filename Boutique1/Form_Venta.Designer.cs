@@ -247,6 +247,7 @@
             this.bEnviar.TabIndex = 15;
             this.bEnviar.Text = "Enviar";
             this.bEnviar.UseVisualStyleBackColor = true;
+            this.bEnviar.Click += new System.EventHandler(this.bEnviar_Click);
             // 
             // bBuscarArticulo
             // 
