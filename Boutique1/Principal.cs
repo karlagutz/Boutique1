@@ -80,20 +80,9 @@ namespace Boutique1
         {
 
         }
-        Form_Venta fVenta;
         private void ventasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (fVenta == null)
-            {
-                fVenta = new Form_Venta();
-                fVenta.MdiParent = this;
-                fVenta.FormClosed += new FormClosedEventHandler(FormClosed);
-                // Display the new form
-                fVenta.Show();
-            }
-            else {
-                fVenta.Activate();
-            }
+           
 
         }
 
@@ -191,6 +180,25 @@ namespace Boutique1
             else
             {
                 fVistaPrevia.Activate();
+            }
+        }
+
+
+
+        Form_Venta fVenta;
+        private void realizarVentaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (fVenta == null)
+            {
+                fVenta = new Form_Venta();
+                fVenta.MdiParent = this;
+                fVenta.FormClosed += new FormClosedEventHandler(FormClosed);
+                // Display the new form
+                fVenta.Show();
+            }
+            else
+            {
+                fVenta.Activate();
             }
         }
     }
