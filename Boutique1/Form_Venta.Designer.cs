@@ -331,7 +331,6 @@
             this.Controls.Add(this.panel1);
             this.Name = "Form_Venta";
             this.Text = "Ventas";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form_Venta_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.dgVenta)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

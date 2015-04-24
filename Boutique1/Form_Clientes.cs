@@ -16,5 +16,41 @@ namespace Boutique1
         {
             InitializeComponent();
         }
+
+        Form_Apartados fApartados;
+        private void dgClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (fApartados == null)
+            {
+                fApartados = new Form_Apartados();
+               // string tot = txtTotal.Text;
+                //fApartados.recibir_datos = tot;
+              //  fApartados.MdiParent = this;
+                fApartados.FormClosed += new FormClosedEventHandler(Forms_FormClosed);
+                // Display the new form
+
+                fApartados.Show();
+            }
+            else
+            {
+                fApartados.Activate();
+            }
+        }
+        private void Forms_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Form f = (Form)sender;
+            //MessageBox.Show(f.Name);
+            switch (f.Name)
+            {
+                case "Form_Apartados":
+                    fApartados = null;
+                    break;
+            }
+        }
+
+        private void bAgregar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

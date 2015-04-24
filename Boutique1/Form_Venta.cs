@@ -43,11 +43,6 @@ namespace Boutique1
         {
 
         }
-
-        private void Form_Venta_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            
-        }
         Form_Cobrar fcobrar;
         private void bEnviar_Click(object sender, EventArgs e)
         {
@@ -57,8 +52,8 @@ namespace Boutique1
                 fcobrar = new Form_Cobrar();
                 string tot = txtTotal.Text;
                 fcobrar.recibir_datos = tot;
-                fcobrar.MdiParent = this;
-                fcobrar.FormClosed += new FormClosedEventHandler(FormClosed);
+                //fcobrar.MdiParent = this;
+                fcobrar.FormClosed += new FormClosedEventHandler(Forms_FormClosed);
                 // Display the new form
 
                 fcobrar.Show();
@@ -68,7 +63,8 @@ namespace Boutique1
                 fcobrar.Activate();
             }
 }
-        private void FormClosed(object sender, FormClosedEventArgs e)
+
+        private void Forms_FormClosed(object sender, FormClosedEventArgs e)
         {
             Form f = (Form)sender;
             //MessageBox.Show(f.Name);
@@ -78,7 +74,6 @@ namespace Boutique1
                     fcobrar = null;
                     break;
             }
-
         }
     }
 }

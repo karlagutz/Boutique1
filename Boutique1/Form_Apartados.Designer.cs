@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             this.dgApartados = new System.Windows.Forms.DataGridView();
+            this.Folio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Credito = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaUltimo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.txtNombreCliente = new System.Windows.Forms.TextBox();
             this.txtIDCliente = new System.Windows.Forms.TextBox();
@@ -36,13 +41,9 @@
             this.lbSaldo = new System.Windows.Forms.Label();
             this.bAbonar = new System.Windows.Forms.Button();
             this.bEditarCliente = new System.Windows.Forms.Button();
-            this.Folio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Credito = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaUltimo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label4 = new System.Windows.Forms.Label();
             this.txtAbono = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgApartados)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,6 +60,36 @@
             this.dgApartados.Name = "dgApartados";
             this.dgApartados.Size = new System.Drawing.Size(724, 333);
             this.dgApartados.TabIndex = 0;
+            // 
+            // Folio
+            // 
+            this.Folio.HeaderText = "Folio";
+            this.Folio.Name = "Folio";
+            this.Folio.ReadOnly = true;
+            // 
+            // Fecha
+            // 
+            this.Fecha.HeaderText = "Fecha";
+            this.Fecha.Name = "Fecha";
+            this.Fecha.ReadOnly = true;
+            // 
+            // Importe
+            // 
+            this.Importe.HeaderText = "Importe";
+            this.Importe.Name = "Importe";
+            this.Importe.ReadOnly = true;
+            // 
+            // Credito
+            // 
+            this.Credito.HeaderText = "Credito";
+            this.Credito.Name = "Credito";
+            this.Credito.ReadOnly = true;
+            // 
+            // FechaUltimo
+            // 
+            this.FechaUltimo.HeaderText = "Fecha Ultimo Pago";
+            this.FechaUltimo.Name = "FechaUltimo";
+            this.FechaUltimo.ReadOnly = true;
             // 
             // label2
             // 
@@ -121,36 +152,6 @@
             this.bEditarCliente.Text = "Editar Cliente";
             this.bEditarCliente.UseVisualStyleBackColor = true;
             // 
-            // Folio
-            // 
-            this.Folio.HeaderText = "Folio";
-            this.Folio.Name = "Folio";
-            this.Folio.ReadOnly = true;
-            // 
-            // Fecha
-            // 
-            this.Fecha.HeaderText = "Fecha";
-            this.Fecha.Name = "Fecha";
-            this.Fecha.ReadOnly = true;
-            // 
-            // Importe
-            // 
-            this.Importe.HeaderText = "Importe";
-            this.Importe.Name = "Importe";
-            this.Importe.ReadOnly = true;
-            // 
-            // Credito
-            // 
-            this.Credito.HeaderText = "Credito";
-            this.Credito.Name = "Credito";
-            this.Credito.ReadOnly = true;
-            // 
-            // FechaUltimo
-            // 
-            this.FechaUltimo.HeaderText = "Fecha Ultimo Pago";
-            this.FechaUltimo.Name = "FechaUltimo";
-            this.FechaUltimo.ReadOnly = true;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -168,6 +169,14 @@
             this.txtAbono.TabIndex = 13;
             this.txtAbono.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
+            // panel1
+            // 
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(766, 445);
+            this.panel1.TabIndex = 15;
+            // 
             // Form_Apartados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -183,6 +192,8 @@
             this.Controls.Add(this.txtNombreCliente);
             this.Controls.Add(this.txtIDCliente);
             this.Controls.Add(this.dgApartados);
+            this.Controls.Add(this.panel1);
+            this.IsMdiContainer = true;
             this.MaximizeBox = false;
             this.Name = "Form_Apartados";
             this.Text = "Apartados";
@@ -210,5 +221,6 @@
         private System.Windows.Forms.Button bEditarCliente;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtAbono;
+        private System.Windows.Forms.Panel panel1;
     }
 }

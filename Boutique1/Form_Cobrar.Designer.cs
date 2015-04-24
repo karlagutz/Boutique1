@@ -235,8 +235,10 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.bImprimir);
             this.Controls.Add(this.bCancelar);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "Form_Cobrar";
-            this.Text = "Form_Cobrar";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            this.Text = "Recibir Pago";
             ((System.ComponentModel.ISupportInitialize)(this.dgPagos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

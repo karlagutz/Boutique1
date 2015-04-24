@@ -12,8 +12,9 @@ namespace Boutique1
 {
     public partial class Principal : Form
     {
-        private int childFormNumber = 0;
-
+        //private int childFormNumber = 0;
+       // public event FormClosedEventHandler Form_FormClosed;
+       
         public Principal()
         {
             InitializeComponent();
@@ -26,22 +27,7 @@ namespace Boutique1
             this.Close();
         }
 
-        private void CutToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-        }
 
-        private void CopyToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void PasteToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void ToolBarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-        }
 
         private void StatusBarToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -80,24 +66,12 @@ namespace Boutique1
         {
 
         }
-        Form_Venta fVenta;
         private void ventasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (fVenta == null)
-            {
-                fVenta = new Form_Venta();
-                fVenta.MdiParent = this;
-                fVenta.FormClosed += new FormClosedEventHandler(FormClosed);
-                // Display the new form
-                fVenta.Show();
-            }
-            else {
-                fVenta.Activate();
-            }
+           
 
         }
-
-        private void FormClosed(object sender, FormClosedEventArgs e)
+        private void Forms_FormClosed(object sender, FormClosedEventArgs e)
         {
             Form f = (Form)sender;
             //MessageBox.Show(f.Name);
@@ -113,6 +87,7 @@ namespace Boutique1
                 case "Form_Articulos":
                     fArticulos = null;
                     break;
+
                 case "Form_Clientes":
                     fClientes = null;
                     break;
@@ -120,8 +95,8 @@ namespace Boutique1
                     fVistaPrevia = null;
                     break;
             }
-           
         }
+       
 
         private void Principal_Load(object sender, EventArgs e)
         {
@@ -136,7 +111,7 @@ namespace Boutique1
             {
                 fAgregarCliente = new Form_AgregarCliente();
                 fAgregarCliente.MdiParent = this;
-                fAgregarCliente.FormClosed += new FormClosedEventHandler(FormClosed);
+                fAgregarCliente.FormClosed += new FormClosedEventHandler(Forms_FormClosed);
                 // Display the new form.
                 fAgregarCliente.Show();
             }
@@ -145,6 +120,7 @@ namespace Boutique1
                 fAgregarCliente.Activate();
             }
         }
+
         Form_Clientes fClientes;
         private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -152,7 +128,7 @@ namespace Boutique1
             {
                 fClientes = new Form_Clientes();
                 fClientes.MdiParent = this;
-                fClientes.FormClosed += new FormClosedEventHandler(FormClosed);
+                fClientes.FormClosed += new FormClosedEventHandler(Forms_FormClosed);
                 // Display the new form.
                 fClientes.Show();
             }
@@ -168,7 +144,7 @@ namespace Boutique1
             {
                 fArticulos = new Form_Articulos();
                 fArticulos.MdiParent = this;
-                fArticulos.FormClosed += new FormClosedEventHandler(FormClosed);
+                fArticulos.FormClosed += new FormClosedEventHandler(Forms_FormClosed);
                 // Display the new form.
                 fArticulos.Show();
             }
@@ -184,13 +160,32 @@ namespace Boutique1
             {
                 fVistaPrevia = new Form_VistaPreviaReporteVentas();
                 fVistaPrevia.MdiParent = this;
-                fVistaPrevia.FormClosed += new FormClosedEventHandler(FormClosed);
+                fVistaPrevia.FormClosed += new FormClosedEventHandler(Forms_FormClosed);
                 // Display the new form.
                 fVistaPrevia.Show();
             }
             else
             {
                 fVistaPrevia.Activate();
+            }
+        }
+
+
+
+        Form_Venta fVenta;
+        private void realizarVentaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (fVenta == null)
+            {
+                fVenta = new Form_Venta();
+                fVenta.MdiParent = this;
+                fVenta.FormClosed += new FormClosedEventHandler(Forms_FormClosed);
+                // Display the new form
+                fVenta.Show();
+            }
+            else
+            {
+                fVenta.Activate();
             }
         }
     }
