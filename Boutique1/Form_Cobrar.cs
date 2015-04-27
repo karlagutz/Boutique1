@@ -68,18 +68,14 @@ namespace Boutique1
                     dgPagos.Rows.Add(modo, pago);
                 }
             }
-            else {
+            else 
+            {
                 lbRestante.Text = "$" + (deuda - pago);
                 dgPagos.Rows.Add(modo, pago);
                 txtPago.Text = "";
             }
-           
-
-
-           
-
-
         }
+
 
         private void txtPago_TextChanged(object sender, EventArgs e)
         {

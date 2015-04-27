@@ -37,6 +37,8 @@
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.txtCredito = new System.Windows.Forms.MaskedTextBox();
             this.bAgregar = new System.Windows.Forms.Button();
+            this.txtcorreo = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -57,7 +59,7 @@
             // 
             // txtTelefono
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(106, 52);
+            this.txtTelefono.Location = new System.Drawing.Point(106, 108);
             this.txtTelefono.Mask = "(999)000-0000";
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(100, 20);
@@ -66,7 +68,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(51, 54);
+            this.label2.Location = new System.Drawing.Point(42, 111);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 13);
             this.label2.TabIndex = 3;
@@ -75,7 +77,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(15, 132);
+            this.label3.Location = new System.Drawing.Point(15, 149);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(88, 13);
             this.label3.TabIndex = 4;
@@ -84,7 +86,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(48, 93);
+            this.label4.Location = new System.Drawing.Point(48, 46);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(55, 13);
             this.label4.TabIndex = 5;
@@ -93,14 +95,14 @@
             // 
             // txtDireccion
             // 
-            this.txtDireccion.Location = new System.Drawing.Point(106, 91);
+            this.txtDireccion.Location = new System.Drawing.Point(106, 44);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(100, 20);
             this.txtDireccion.TabIndex = 7;
             // 
             // txtCredito
             // 
-            this.txtCredito.Location = new System.Drawing.Point(106, 127);
+            this.txtCredito.Location = new System.Drawing.Point(106, 144);
             this.txtCredito.Mask = "99999";
             this.txtCredito.Name = "txtCredito";
             this.txtCredito.Size = new System.Drawing.Size(100, 20);
@@ -109,7 +111,7 @@
             // 
             // bAgregar
             // 
-            this.bAgregar.Location = new System.Drawing.Point(117, 169);
+            this.bAgregar.Location = new System.Drawing.Point(117, 205);
             this.bAgregar.Name = "bAgregar";
             this.bAgregar.Size = new System.Drawing.Size(75, 23);
             this.bAgregar.TabIndex = 9;
@@ -117,11 +119,29 @@
             this.bAgregar.UseVisualStyleBackColor = true;
             this.bAgregar.Click += new System.EventHandler(this.button1_Click);
             // 
+            // txtcorreo
+            // 
+            this.txtcorreo.Location = new System.Drawing.Point(106, 78);
+            this.txtcorreo.Name = "txtcorreo";
+            this.txtcorreo.Size = new System.Drawing.Size(100, 20);
+            this.txtcorreo.TabIndex = 11;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(56, 78);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(41, 13);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Correo:";
+            // 
             // Form_AgregarCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(258, 229);
+            this.ClientSize = new System.Drawing.Size(295, 260);
+            this.Controls.Add(this.txtcorreo);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.bAgregar);
             this.Controls.Add(this.txtCredito);
             this.Controls.Add(this.txtDireccion);
@@ -150,5 +170,7 @@
         private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.MaskedTextBox txtCredito;
         private System.Windows.Forms.Button bAgregar;
+        private System.Windows.Forms.TextBox txtcorreo;
+        private System.Windows.Forms.Label label5;
     }
 }

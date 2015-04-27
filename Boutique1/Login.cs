@@ -21,5 +21,10 @@ namespace Boutique1
         {
 
         }
+
+        private void bEntrar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

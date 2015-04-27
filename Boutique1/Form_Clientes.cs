@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -7,14 +8,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace Boutique1
 {
     public partial class Form_Clientes : Form
     {
+        DataTable dtGrid;
+        SQLConnector sq = SQLConnector.getInstance();
+
         public Form_Clientes()
         {
             InitializeComponent();
+            actualizarGrid();
         }
 
         Form_Apartados fApartados;
@@ -23,12 +29,7 @@ namespace Boutique1
             if (fApartados == null)
             {
                 fApartados = new Form_Apartados();
-               // string tot = txtTotal.Text;
-                //fApartados.recibir_datos = tot;
-              //  fApartados.MdiParent = this;
                 fApartados.FormClosed += new FormClosedEventHandler(Forms_FormClosed);
-                // Display the new form
-
                 fApartados.Show();
             }
             else
@@ -48,9 +49,78 @@ namespace Boutique1
             }
         }
 
+        Form_AgregarCliente ac;
         private void bAgregar_Click(object sender, EventArgs e)
         {
+            
+            if (!this.MdiParent.Contains(ac))
+            {
+                ac = new Form_AgregarCliente(this);
+                ac.MdiParent = this.MdiParent;
+                ac.Show();
+            }
+            else
+            {
+                ac.Activate();
+            }
+            
+            
+        }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+            
+           
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            
+            string texto = textBox1.Text;
+            string cadena = "nombre like '%" + texto + "%' or direccion like '%" + texto
+                            + "%' or correo like '%" + texto + "%' or telefono like '%" + texto + "%'";
+            Debug.WriteLine(cadena);
+            DataView res = new DataView(dtGrid);
+            res.RowFilter = cadena;
+            dgClientes.DataSource = res;
+        }
+
+        private void editarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DataGridViewCellCollection dgcc = dgClientes.SelectedRows[0].Cells;
+
+            ac = new Form_AgregarCliente(Convert.ToInt32(dgcc[0].Value),Convert.ToString(dgcc[1].Value), 
+                                        Convert.ToString(dgcc[2].Value), Convert.ToString(dgcc[3].Value),
+                                        Convert.ToString(dgcc[4].Value),Convert.ToString(dgcc[5].Value),this);
+
+            ac.MdiParent = this.MdiParent;
+            ac.Show();
+            
+        }
+
+        private void dgClientes_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                var hti = dgClientes.HitTest(e.X, e.Y);
+                dgClientes.ClearSelection();
+                if (hti.RowIndex >= 0)
+                {
+                    dgClientes.Rows[hti.RowIndex].Selected = true;
+                }
+            }
+        }
+
+        public void actualizarGrid() {
+            DataSet ds = sq.ejecutarProcedimiento("dbo.listaDeClientes");
+            dtGrid = ds.Tables[0];
+            dgClientes.DataSource = dtGrid;
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            actualizarGrid();
         }
     }
 }

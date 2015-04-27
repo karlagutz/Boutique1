@@ -34,6 +34,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.bEntrar = new System.Windows.Forms.Button();
+            this.salir = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -82,17 +83,28 @@
             // 
             // bEntrar
             // 
-            this.bEntrar.Location = new System.Drawing.Point(155, 148);
+            this.bEntrar.Location = new System.Drawing.Point(77, 153);
             this.bEntrar.Name = "bEntrar";
             this.bEntrar.Size = new System.Drawing.Size(75, 23);
             this.bEntrar.TabIndex = 5;
             this.bEntrar.Text = "Entrar";
             this.bEntrar.UseVisualStyleBackColor = true;
+            this.bEntrar.Click += new System.EventHandler(this.bEntrar_Click);
+            // 
+            // salir
+            // 
+            this.salir.Location = new System.Drawing.Point(169, 153);
+            this.salir.Name = "salir";
+            this.salir.Size = new System.Drawing.Size(75, 23);
+            this.salir.TabIndex = 6;
+            this.salir.Text = "Cerrar";
+            this.salir.UseVisualStyleBackColor = true;
             // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.salir);
             this.Controls.Add(this.bEntrar);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -114,5 +126,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button bEntrar;
+        private System.Windows.Forms.Button salir;
     }
 }

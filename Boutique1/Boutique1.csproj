@@ -50,6 +50,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Form_AgregarArticulos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_AgregarArticulos.Designer.cs">
+      <DependentUpon>Form_AgregarArticulos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_AgregarCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +112,10 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="SQLConnector.cs" />
+    <EmbeddedResource Include="Form_AgregarArticulos.resx">
+      <DependentUpon>Form_AgregarArticulos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_AgregarCliente.resx">
       <DependentUpon>Form_AgregarCliente.cs</DependentUpon>
     </EmbeddedResource>

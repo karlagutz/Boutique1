@@ -28,22 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.bEditar = new System.Windows.Forms.Button();
             this.bAgregar = new System.Windows.Forms.Button();
-            this.dgClientes = new System.Windows.Forms.DataGridView();
+            this.dgArticulos = new System.Windows.Forms.DataGridView();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgClientes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgArticulos)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.dgClientes);
+            this.panel1.Controls.Add(this.dgArticulos);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -52,9 +56,9 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.textBox1);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.bEditar);
             this.panel2.Controls.Add(this.bAgregar);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel2.Location = new System.Drawing.Point(579, 0);
@@ -81,33 +85,50 @@
             this.label1.Text = "Buscar";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // bEditar
-            // 
-            this.bEditar.Location = new System.Drawing.Point(30, 161);
-            this.bEditar.Name = "bEditar";
-            this.bEditar.Size = new System.Drawing.Size(75, 38);
-            this.bEditar.TabIndex = 2;
-            this.bEditar.Text = "Editar";
-            this.bEditar.UseVisualStyleBackColor = true;
-            this.bEditar.Click += new System.EventHandler(this.bEditar_Click);
-            // 
             // bAgregar
             // 
             this.bAgregar.Location = new System.Drawing.Point(30, 101);
             this.bAgregar.Name = "bAgregar";
             this.bAgregar.Size = new System.Drawing.Size(75, 40);
             this.bAgregar.TabIndex = 1;
-            this.bAgregar.Text = "Agregar";
+            this.bAgregar.Text = "Nuevo";
             this.bAgregar.UseVisualStyleBackColor = true;
+            this.bAgregar.Click += new System.EventHandler(this.bAgregar_Click);
             // 
-            // dgClientes
+            // dgArticulos
             // 
-            this.dgClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgClientes.Dock = System.Windows.Forms.DockStyle.Left;
-            this.dgClientes.Location = new System.Drawing.Point(0, 0);
-            this.dgClientes.Name = "dgClientes";
-            this.dgClientes.Size = new System.Drawing.Size(581, 391);
-            this.dgClientes.TabIndex = 0;
+            this.dgArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgArticulos.ContextMenuStrip = this.contextMenuStrip1;
+            this.dgArticulos.Dock = System.Windows.Forms.DockStyle.Left;
+            this.dgArticulos.Location = new System.Drawing.Point(0, 0);
+            this.dgArticulos.Name = "dgArticulos";
+            this.dgArticulos.Size = new System.Drawing.Size(581, 391);
+            this.dgArticulos.TabIndex = 0;
+            this.dgArticulos.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dgArticulos_MouseDown);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.editarToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(105, 26);
+            // 
+            // editarToolStripMenuItem
+            // 
+            this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
+            this.editarToolStripMenuItem.Size = new System.Drawing.Size(104, 22);
+            this.editarToolStripMenuItem.Text = "Editar";
+            this.editarToolStripMenuItem.Click += new System.EventHandler(this.editarToolStripMenuItem_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(30, 157);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 40);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Actualizar ";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form_Articulos
             // 
@@ -121,7 +142,8 @@
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgClientes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgArticulos)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -130,10 +152,12 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button bEditar;
         private System.Windows.Forms.Button bAgregar;
-        private System.Windows.Forms.DataGridView dgClientes;
+        private System.Windows.Forms.DataGridView dgArticulos;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem;
+        private System.Windows.Forms.Button button1;
     }
 }

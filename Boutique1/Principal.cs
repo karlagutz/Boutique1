@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -74,7 +76,6 @@ namespace Boutique1
         private void Forms_FormClosed(object sender, FormClosedEventArgs e)
         {
             Form f = (Form)sender;
-            //MessageBox.Show(f.Name);
             switch (f.Name)
             {
                 case "Form_Venta":
@@ -93,6 +94,10 @@ namespace Boutique1
                     break;
                 case "Form_VistaPreviaReporteVentas":
                     fVistaPrevia = null;
+                    break;
+
+                case "Form_AgregarArticulos.cs":
+                    farticu = null;
                     break;
             }
         }
@@ -188,5 +193,24 @@ namespace Boutique1
                 fVenta.Activate();
             }
         }
+
+        Form_AgregarArticulos farticu;
+        private void agregarAriculoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (farticu == null)
+            {
+                farticu = new Form_AgregarArticulos();
+                farticu.MdiParent = this;
+                farticu.FormClosed += new FormClosedEventHandler(Forms_FormClosed);
+                // Display the new form
+                farticu.Show();
+            }
+            else
+            {
+                farticu.Activate();
+            }
+        }
+
+       
     }
 }

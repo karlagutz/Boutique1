@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,15 +13,30 @@ namespace Boutique1
 {
     public partial class Form_Articulos : Form
     {
+        SQLConnector sql = SQLConnector.getInstance();
+        DataSet ds;
+        DataTable dtGrid;
+
         public Form_Articulos()
         {
             InitializeComponent();
+            actualizarGrid();
         }
 
         private void bEditar_Click(object sender, EventArgs e)
         {
 
         }
+
+
+
+        public void actualizarGrid()
+        {
+            ds = sql.ejecutarProcedimiento("dbo.listaDeArticulos");
+            dtGrid = ds.Tables[0];
+            dgArticulos.DataSource = dtGrid;
+        }
+
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -29,7 +45,60 @@ namespace Boutique1
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
+            string texto = textBox1.Text;
+            string cadena = "descripcion like '%" + texto + "%'";
+            Debug.WriteLine(cadena);
+            DataView res = new DataView(dtGrid);
+            res.RowFilter = cadena;
+            dgArticulos.DataSource = res;
+        }
 
+
+        Form_AgregarArticulos ac;
+        private void editarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DataGridViewCellCollection dgcc = dgArticulos.SelectedRows[0].Cells;
+
+            ac = new Form_AgregarArticulos(Convert.ToInt32(dgcc[0].Value), Convert.ToString(dgcc[1].Value),
+                                        Convert.ToString(dgcc[2].Value), Convert.ToString(dgcc[3].Value),
+                                        Convert.ToString(dgcc[4].Value), this);
+
+            ac.MdiParent = this.MdiParent;
+            ac.Show();
+        }
+
+
+
+        private void bAgregar_Click(object sender, EventArgs e)
+        {
+            if (!this.MdiParent.Contains(ac))
+            {
+                ac = new Form_AgregarArticulos(this);
+                ac.MdiParent = this.MdiParent;
+                ac.Show();
+            }
+            else
+            {
+                ac.Activate();
+            }
+        }
+
+        private void dgArticulos_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                var hti = dgArticulos.HitTest(e.X, e.Y);
+                dgArticulos.ClearSelection();
+                if (hti.RowIndex >= 0)
+                {
+                    dgArticulos.Rows[hti.RowIndex].Selected = true;
+                }
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            actualizarGrid();
         }
     }
 }
