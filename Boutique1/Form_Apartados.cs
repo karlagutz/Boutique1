@@ -23,9 +23,7 @@ namespace Boutique1
             if (fcobrar == null)
             {
                 fcobrar = new Form_Cobrar();
-                string tot = txtAbono.Text;
-                fcobrar.recibir_datos = tot;
-                //fcobrar.MdiParent = this;
+                fcobrar.MdiParent = this.MdiParent;
                 fcobrar.FormClosed += new FormClosedEventHandler(Forms_FormClosed);
                 // Display the new form
 

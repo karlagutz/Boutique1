@@ -31,13 +31,14 @@
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.bAgregar = new System.Windows.Forms.Button();
             this.dgArticulos = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.button1 = new System.Windows.Forms.Button();
+            this.enviarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgArticulos)).BeginInit();
@@ -51,7 +52,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(729, 391);
+            this.panel1.Size = new System.Drawing.Size(702, 334);
             this.panel1.TabIndex = 2;
             // 
             // panel2
@@ -61,14 +62,26 @@
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.bAgregar);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(579, 0);
+            this.panel2.Location = new System.Drawing.Point(552, 0);
             this.panel2.MaximumSize = new System.Drawing.Size(150, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(150, 391);
+            this.panel2.Size = new System.Drawing.Size(150, 334);
             this.panel2.TabIndex = 3;
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.Location = new System.Drawing.Point(30, 157);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 40);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Actualizar ";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // textBox1
             // 
+            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox1.Location = new System.Drawing.Point(12, 46);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(117, 20);
@@ -87,6 +100,7 @@
             // 
             // bAgregar
             // 
+            this.bAgregar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.bAgregar.Location = new System.Drawing.Point(30, 101);
             this.bAgregar.Name = "bAgregar";
             this.bAgregar.Size = new System.Drawing.Size(75, 40);
@@ -97,48 +111,49 @@
             // 
             // dgArticulos
             // 
+            this.dgArticulos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgArticulos.ContextMenuStrip = this.contextMenuStrip1;
-            this.dgArticulos.Dock = System.Windows.Forms.DockStyle.Left;
             this.dgArticulos.Location = new System.Drawing.Point(0, 0);
             this.dgArticulos.Name = "dgArticulos";
-            this.dgArticulos.Size = new System.Drawing.Size(581, 391);
+            this.dgArticulos.Size = new System.Drawing.Size(558, 334);
             this.dgArticulos.TabIndex = 0;
             this.dgArticulos.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dgArticulos_MouseDown);
             // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.editarToolStripMenuItem});
+            this.editarToolStripMenuItem,
+            this.enviarToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(105, 26);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(107, 48);
             // 
             // editarToolStripMenuItem
             // 
             this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
-            this.editarToolStripMenuItem.Size = new System.Drawing.Size(104, 22);
+            this.editarToolStripMenuItem.Size = new System.Drawing.Size(106, 22);
             this.editarToolStripMenuItem.Text = "Editar";
             this.editarToolStripMenuItem.Click += new System.EventHandler(this.editarToolStripMenuItem_Click);
             // 
-            // button1
+            // enviarToolStripMenuItem
             // 
-            this.button1.Location = new System.Drawing.Point(30, 157);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 40);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Actualizar ";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.enviarToolStripMenuItem.Name = "enviarToolStripMenuItem";
+            this.enviarToolStripMenuItem.Size = new System.Drawing.Size(106, 22);
+            this.enviarToolStripMenuItem.Text = "Enviar";
+            this.enviarToolStripMenuItem.Click += new System.EventHandler(this.enviarToolStripMenuItem_Click);
             // 
             // Form_Articulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(729, 391);
+            this.ClientSize = new System.Drawing.Size(702, 334);
             this.Controls.Add(this.panel1);
             this.Name = "Form_Articulos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
             this.Text = "Artículos";
+            this.Load += new System.EventHandler(this.Form_Articulos_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -159,5 +174,6 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ToolStripMenuItem enviarToolStripMenuItem;
     }
 }

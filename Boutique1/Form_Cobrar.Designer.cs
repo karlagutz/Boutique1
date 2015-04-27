@@ -103,7 +103,6 @@
             this.dgPagos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dgPagos.Size = new System.Drawing.Size(403, 135);
             this.dgPagos.TabIndex = 4;
-            this.dgPagos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // Modo
             // 
@@ -201,7 +200,6 @@
             this.label5.Size = new System.Drawing.Size(45, 13);
             this.label5.TabIndex = 13;
             this.label5.Text = "Cambio:";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // bPagar
             // 

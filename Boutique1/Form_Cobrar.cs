@@ -13,30 +13,23 @@ namespace Boutique1
 
     public partial class Form_Cobrar : Form
     {
-        
+
+
+        public Form_Venta form;
         public double pago = 0;
 
         public Form_Cobrar()
         {
             InitializeComponent();
         }
-        public string recibir_datos;
-        public void Form_Cobrar_load(object sender, EventArgs e)
+
+        public Form_Cobrar(Form_Venta form)
         {
-            lbTotal.Text = recibir_datos;
-            double deuda = Convert.ToDouble(lbTotal.Text);
-            double restante = deuda - pago;
+            InitializeComponent();
+            this.form = form;
+            lbTotal.Text = form.getTotal();
         }
 
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
 
         private void bCancelar_Click(object sender, EventArgs e)
         {
@@ -45,6 +38,11 @@ namespace Boutique1
 
         private void bPagar_Click(object sender, EventArgs e)
         {
+
+
+
+
+
             double deuda = Convert.ToDouble(lbTotal.Text);
             double restante = Convert.ToDouble(lbRestante.Text);
             pago = Convert.ToDouble(txtPago.Text);
@@ -90,5 +88,7 @@ namespace Boutique1
                 MessageBox.Show("Aún resta "+restante+" por pagar.");
             }
         }
+
+        
     }
 }

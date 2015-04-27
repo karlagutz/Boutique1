@@ -36,6 +36,7 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ventasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.agregarAriculoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.realizarVentaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.windowsMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.tileVerticalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -48,7 +49,6 @@
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
-            this.agregarAriculoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -92,6 +92,13 @@
             this.agregarClienteToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.agregarClienteToolStripMenuItem.Text = "Agregar cliente";
             this.agregarClienteToolStripMenuItem.Click += new System.EventHandler(this.agregarClienteToolStripMenuItem_Click);
+            // 
+            // agregarAriculoToolStripMenuItem
+            // 
+            this.agregarAriculoToolStripMenuItem.Name = "agregarAriculoToolStripMenuItem";
+            this.agregarAriculoToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.agregarAriculoToolStripMenuItem.Text = "Agregar Ariculo";
+            this.agregarAriculoToolStripMenuItem.Click += new System.EventHandler(this.agregarAriculoToolStripMenuItem_Click);
             // 
             // realizarVentaToolStripMenuItem
             // 
@@ -192,22 +199,15 @@
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.MdiWindowListItem = this.windowsMenu;
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(632, 24);
+            this.menuStrip.Size = new System.Drawing.Size(1352, 24);
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "MenuStrip";
-            // 
-            // agregarAriculoToolStripMenuItem
-            // 
-            this.agregarAriculoToolStripMenuItem.Name = "agregarAriculoToolStripMenuItem";
-            this.agregarAriculoToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
-            this.agregarAriculoToolStripMenuItem.Text = "Agregar Ariculo";
-            this.agregarAriculoToolStripMenuItem.Click += new System.EventHandler(this.agregarAriculoToolStripMenuItem_Click);
             // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(632, 453);
+            this.ClientSize = new System.Drawing.Size(1352, 662);
             this.Controls.Add(this.menuStrip);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip;

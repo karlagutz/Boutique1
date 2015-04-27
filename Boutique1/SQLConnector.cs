@@ -176,6 +176,23 @@ namespace Boutique1
             return ds;
         }
 
+        public object ejecutarEscalar(string sql) {
+            object res = "null";
+            try
+            {
+                con.Open();
+                comand = con.CreateCommand();
+                comand.CommandText = sql;
+                res = comand.ExecuteScalar();
+                con.Close();
 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error no se puede." + ex.Message + ex.StackTrace);
+            }
+
+            return res;
+        }
     }
 }

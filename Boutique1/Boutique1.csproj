@@ -113,6 +113,7 @@
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="SQLConnector.cs" />
+    <Compile Include="Utilerias.cs" />
     <EmbeddedResource Include="Form_AgregarArticulos.resx">
       <DependentUpon>Form_AgregarArticulos.cs</DependentUpon>
     </EmbeddedResource>

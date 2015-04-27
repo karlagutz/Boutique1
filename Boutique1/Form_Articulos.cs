@@ -16,12 +16,22 @@ namespace Boutique1
         SQLConnector sql = SQLConnector.getInstance();
         DataSet ds;
         DataTable dtGrid;
-
+        Form_Venta form;
         public Form_Articulos()
         {
             InitializeComponent();
             actualizarGrid();
+            contextMenuStrip1.Items["enviarToolStripMenuItem"].Visible = false;
         }
+
+        public Form_Articulos(Form_Venta form)
+        {
+            InitializeComponent();
+            actualizarGrid();
+            contextMenuStrip1.Items["enviarToolStripMenuItem"].Visible = true;
+            this.form = form;
+        }
+
 
         private void bEditar_Click(object sender, EventArgs e)
         {
@@ -100,5 +110,38 @@ namespace Boutique1
         {
             actualizarGrid();
         }
+
+        private void enviarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DataGridViewCellCollection dgcc = dgArticulos.SelectedRows[0].Cells;
+            string cantidad = "";
+            int cantidadInt = 0;
+            int cantidadStock = 0;
+            if (form != null)
+            {
+                if (Utilerias.InputBox("Ingrese Cantidad", "Cantidad: ", ref cantidad) == DialogResult.OK)
+                {
+                    cantidadInt = Convert.ToInt32(cantidad);
+                    cantidadStock = Convert.ToInt32(dgcc[4].Value);
+                    if (cantidadInt > cantidadStock)
+                    {
+                        MessageBox.Show("No existen suficientes elementos.");
+                    }
+                    else
+                    {
+                        string precio = Convert.ToString(dgcc[2].Value);
+                        int precioint = Convert.ToInt32(dgcc[2].Value);
+                        form.getGrid().Rows.Add(dgcc[0].Value,dgcc[1].Value, cantidad, precio, cantidadInt * precioint, cantidadStock);
+                    }
+                }
+            }
+        }
+
+        private void Form_Articulos_Load(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 }

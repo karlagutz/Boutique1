@@ -16,11 +16,22 @@ namespace Boutique1
     {
         DataTable dtGrid;
         SQLConnector sq = SQLConnector.getInstance();
+        Form_Venta form;
+
 
         public Form_Clientes()
         {
             InitializeComponent();
             actualizarGrid();
+            contextMenuStrip1.Items["enviarToolStripMenuItem"].Visible = false;
+        }
+
+        public Form_Clientes(Form_Venta form)
+        {
+            InitializeComponent();
+            actualizarGrid();
+            contextMenuStrip1.Items["enviarToolStripMenuItem"].Visible = true;
+            this.form = form;
         }
 
         Form_Apartados fApartados;
@@ -122,5 +133,17 @@ namespace Boutique1
         {
             actualizarGrid();
         }
+
+        private void enviarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DataGridViewCellCollection dgcc = dgClientes.SelectedRows[0].Cells;
+            
+            if (form != null)
+            {
+                form.getIdCliente().Text = Convert.ToString(dgcc[0].Value);
+                form.getNombreCliente().Text = Convert.ToString(dgcc[1].Value);
+            }
+        }
+
     }
 }

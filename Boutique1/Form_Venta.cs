@@ -12,17 +12,20 @@ namespace Boutique1
 {
     public partial class Form_Venta : Form
     {
-        
-        
+
+        SQLConnector sql = SQLConnector.getInstance();
         public Form_Venta()
         {
             InitializeComponent();
+            lbFecha.Text = DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss t");
+            int res = Convert.ToInt32(sql.ejecutarEscalar("SELECT IDENT_CURRENT('ventas')"));
+            int mas = res == 1? 0 : 1;
+            txtIdVenta.Text = Convert.ToString(res + mas);
+          
+            
+            
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
 
         private void label5_Click(object sender, EventArgs e)
         {
@@ -41,28 +44,87 @@ namespace Boutique1
 
         private void bDescuento_Click(object sender, EventArgs e)
         {
+            string can = "";
+            if (Utilerias.InputBox("Descuento", "Ingrese Descuento (ejemplo => 12): ", ref can) == DialogResult.OK)
+            {   
+                int n;
+                bool isNumeric = int.TryParse(can, out n);
 
+                if (isNumeric && n > 0 && n < 100 )
+                {
+                    if (txtTotal.Text != "")
+                    {
+                        double n2 = Convert.ToDouble(n);
+                        double total = Convert.ToInt32(txtTotal.Text);
+                        double nuevoTotal = total * (1 - (n2 / 100));
+                        txtTotal.Text = Convert.ToString(nuevoTotal);
+                        MessageBox.Show(total + " " + nuevoTotal);
+                    }
+                    else
+                    {
+                        MessageBox.Show("No Existe Total");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Ingrese solo numeros entre 1 y 100");
+                }
+            }
         }
+
         Form_Cobrar fcobrar;
         private void bEnviar_Click(object sender, EventArgs e)
         {
 
             if (fcobrar == null)
             {
-                fcobrar = new Form_Cobrar();
-                string tot = txtTotal.Text;
-                fcobrar.recibir_datos = tot;
-                //fcobrar.MdiParent = this;
+                fcobrar = new Form_Cobrar(this);
+                fcobrar.MdiParent = this.MdiParent;
                 fcobrar.FormClosed += new FormClosedEventHandler(Forms_FormClosed);
-                // Display the new form
-
                 fcobrar.Show();
             }
             else
             {
                 fcobrar.Activate();
             }
-}
+
+        }
+
+        Form_Articulos fa;
+        private void bBuscarArticulo_Click(object sender, EventArgs e)
+        {
+            if (fa == null)
+            {
+                fa = new Form_Articulos(this);
+                fa.MdiParent = this.MdiParent;
+                fa.FormClosed += new FormClosedEventHandler(Forms_FormClosed);
+                //Display the new form
+                fa.Show();
+            }
+            else
+            {
+                fa.Activate();
+            }
+            fa.actualizarGrid();
+        }
+
+        Form_Clientes fClien;
+        private void bBuscarCliente_Click(object sender, EventArgs e)
+        {
+            if (fClien == null)
+            {
+                fClien = new Form_Clientes(this);
+                fClien.MdiParent = this.MdiParent;
+                fClien.FormClosed += new FormClosedEventHandler(Forms_FormClosed);
+                //Display the new form
+                fClien.Show();
+            }
+            else
+            {
+                fClien.Activate();
+            }
+            fClien.actualizarGrid();
+        }
 
         private void Forms_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -73,7 +135,84 @@ namespace Boutique1
                 case "Form_Cobrar":
                     fcobrar = null;
                     break;
+                case "Form_Articulos":
+                    fa = null;
+                    break;
+                case "Form_Clientes":
+                    fClien = null;
+                    break;
+
             }
         }
+
+        private void dgVenta_UserAddedRow(object sender, DataGridViewRowEventArgs e)
+        {
+            
+        }
+
+        private void bCancelarArticulo_Click(object sender, EventArgs e)
+        {
+
+            foreach (DataGridViewRow row in dgVenta.SelectedRows)
+            {
+                dgVenta.Rows.Remove(row);
+            }
+            
+        }
+        public DataGridView getGrid()
+        {
+            return dgVenta;
+        }
+
+        public TextBox getIdCliente()
+        {
+            return txtIDCliente;
+        }
+
+        public TextBox getNombreCliente()
+        {
+            return txtNombreCliente;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            decimal total = 0;
+            DataGridViewRowCollection col = dgVenta.Rows;
+            for (int i = 0; i < col.Count; i++)
+            {
+                total = total + Convert.ToDecimal(col[i].Cells[4].Value);
+
+            }
+            txtTotal.Text = Convert.ToString(total);
+        }
+
+        private void dgVenta_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                var hti = dgVenta.HitTest(e.X, e.Y);
+                dgVenta.ClearSelection();
+                if (hti.RowIndex >= 0)
+                {
+                    dgVenta.Rows[hti.RowIndex].Selected = true;
+                }
+            }
+        }
+
+        public DataGridView getDataGrid() {
+
+            return dgVenta;
+        }
+
+        public string getFolio(){
+            return txtIdVenta.Text;
+        }
+
+        public string getTotal()
+        {
+            return txtTotal.Text;
+        }
+
+      
     }
 }
