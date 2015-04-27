@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -21,7 +22,7 @@ namespace Boutique1
             int res = Convert.ToInt32(sql.ejecutarEscalar("SELECT IDENT_CURRENT('ventas')"));
             int mas = res == 1? 0 : 1;
             txtIdVenta.Text = Convert.ToString(res + mas);
-          
+            cbModoPago.SelectedIndex = 0;
             
             
         }
@@ -72,20 +73,41 @@ namespace Boutique1
             }
         }
 
-        Form_Cobrar fcobrar;
+       
         private void bEnviar_Click(object sender, EventArgs e)
         {
+           int idVenta = Convert.ToInt32(txtIdVenta.Text);
+           Hashtable h = new Hashtable();
+           decimal d = Convert.ToDecimal(txtTotal.Text);
+            h.Add("precioTotal",d);
+            h.Add("fecha",DateTime.Now);
+            h.Add("modoPago", cbModoPago.SelectedText);
+            h.Add("idCliente", txtIDCliente.Text);
+            DataGridViewRowCollection rows = dgVenta.Rows;
+            try
+            {
+                sql.ejecutarProcedimiento("dbo.nuevaVenta", h);
+                for (int i = 0; i < rows.Count - 1; i++)
+                {
+                    h = new Hashtable();
+                    h.Add("id_articulo", Convert.ToInt32(rows[i].Cells[0].Value));
+                    h.Add("id_venta",idVenta);
+                    h.Add("cantidadAComprar", Convert.ToInt32(rows[i].Cells[2].Value));
+                    h.Add("precioVenta", Convert.ToDecimal(rows[i].Cells[3].Value));
+                    h.Add("total", Convert.ToDecimal(rows[i].Cells[4].Value));
 
-            if (fcobrar == null)
-            {
-                fcobrar = new Form_Cobrar(this);
-                fcobrar.MdiParent = this.MdiParent;
-                fcobrar.FormClosed += new FormClosedEventHandler(Forms_FormClosed);
-                fcobrar.Show();
+                    sql.ejecutarProcedimiento("dbo.nuevoDetalleVenta", h);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                fcobrar.Activate();
+
+                MessageBox.Show("Ingrese Bien los datos");
+            }
+
+            finally 
+            {
+                MessageBox.Show("Venta Realizada");
             }
 
         }
@@ -132,9 +154,6 @@ namespace Boutique1
             //MessageBox.Show(f.Name);
             switch (f.Name)
             {
-                case "Form_Cobrar":
-                    fcobrar = null;
-                    break;
                 case "Form_Articulos":
                     fa = null;
                     break;
@@ -211,6 +230,11 @@ namespace Boutique1
         public string getTotal()
         {
             return txtTotal.Text;
+        }
+
+        private void bNuevo_Click(object sender, EventArgs e)
+        {
+
         }
 
       

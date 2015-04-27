@@ -18,10 +18,13 @@ namespace Boutique1
         public Form_Venta form;
         public double pago = 0;
 
+
+
         public Form_Cobrar()
         {
             InitializeComponent();
         }
+
 
         public Form_Cobrar(Form_Venta form)
         {

@@ -34,19 +34,9 @@ namespace Boutique1
             this.form = form;
         }
 
-        Form_Apartados fApartados;
         private void dgClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (fApartados == null)
-            {
-                fApartados = new Form_Apartados();
-                fApartados.FormClosed += new FormClosedEventHandler(Forms_FormClosed);
-                fApartados.Show();
-            }
-            else
-            {
-                fApartados.Activate();
-            }
+            
         }
         private void Forms_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -54,9 +44,7 @@ namespace Boutique1
             //MessageBox.Show(f.Name);
             switch (f.Name)
             {
-                case "Form_Apartados":
-                    fApartados = null;
-                    break;
+               
             }
         }
 
