@@ -50,6 +50,11 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BD_boutiqueDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BD_boutiqueDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Form_AgregarArticulos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -61,6 +66,12 @@
     </Compile>
     <Compile Include="Form_AgregarCliente.Designer.cs">
       <DependentUpon>Form_AgregarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_AgregarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_AgregarUsuario.Designer.cs">
+      <DependentUpon>Form_AgregarUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_Apartados.cs">
       <SubType>Form</SubType>
@@ -85,6 +96,18 @@
     </Compile>
     <Compile Include="Form_Cobrar.Designer.cs">
       <DependentUpon>Form_Cobrar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_DetalleVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_DetalleVentas.Designer.cs">
+      <DependentUpon>Form_DetalleVentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Usuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Usuarios.Designer.cs">
+      <DependentUpon>Form_Usuarios.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_Venta.cs">
       <SubType>Form</SubType>
@@ -120,6 +143,9 @@
     <EmbeddedResource Include="Form_AgregarCliente.resx">
       <DependentUpon>Form_AgregarCliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form_AgregarUsuario.resx">
+      <DependentUpon>Form_AgregarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_Apartados.resx">
       <DependentUpon>Form_Apartados.cs</DependentUpon>
     </EmbeddedResource>
@@ -131,6 +157,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Cobrar.resx">
       <DependentUpon>Form_Cobrar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_DetalleVentas.resx">
+      <DependentUpon>Form_DetalleVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Usuarios.resx">
+      <DependentUpon>Form_Usuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Venta.resx">
       <DependentUpon>Form_Venta.cs</DependentUpon>
@@ -153,6 +185,17 @@
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="BD_boutiqueDataSet.xsc">
+      <DependentUpon>BD_boutiqueDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BD_boutiqueDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BD_boutiqueDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BD_boutiqueDataSet.xss">
+      <DependentUpon>BD_boutiqueDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

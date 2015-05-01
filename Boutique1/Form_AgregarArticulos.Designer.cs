@@ -78,6 +78,7 @@
             this.txtpreciocompra.Name = "txtpreciocompra";
             this.txtpreciocompra.Size = new System.Drawing.Size(100, 20);
             this.txtpreciocompra.TabIndex = 5;
+            this.txtpreciocompra.TextChanged += new System.EventHandler(this.txtpreciocompra_TextChanged);
             // 
             // label3
             // 

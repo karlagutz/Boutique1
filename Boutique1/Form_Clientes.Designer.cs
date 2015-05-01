@@ -32,13 +32,14 @@
             this.dgClientes = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.enviarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.bAgregar = new System.Windows.Forms.Button();
-            this.enviarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnAyuda = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgClientes)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -47,13 +48,18 @@
             // 
             // dgClientes
             // 
+            this.dgClientes.AllowUserToAddRows = false;
+            this.dgClientes.AllowUserToDeleteRows = false;
             this.dgClientes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgClientes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgClientes.ContextMenuStrip = this.contextMenuStrip1;
             this.dgClientes.Location = new System.Drawing.Point(0, 0);
             this.dgClientes.Name = "dgClientes";
+            this.dgClientes.ReadOnly = true;
             this.dgClientes.Size = new System.Drawing.Size(732, 368);
             this.dgClientes.TabIndex = 0;
             this.dgClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgClientes_CellContentClick);
@@ -65,14 +71,21 @@
             this.editarToolStripMenuItem,
             this.enviarToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 70);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(107, 48);
             // 
             // editarToolStripMenuItem
             // 
             this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
-            this.editarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.editarToolStripMenuItem.Size = new System.Drawing.Size(106, 22);
             this.editarToolStripMenuItem.Text = "Editar";
             this.editarToolStripMenuItem.Click += new System.EventHandler(this.editarToolStripMenuItem_Click);
+            // 
+            // enviarToolStripMenuItem
+            // 
+            this.enviarToolStripMenuItem.Name = "enviarToolStripMenuItem";
+            this.enviarToolStripMenuItem.Size = new System.Drawing.Size(106, 22);
+            this.enviarToolStripMenuItem.Text = "Enviar";
+            this.enviarToolStripMenuItem.Click += new System.EventHandler(this.enviarToolStripMenuItem_Click);
             // 
             // panel1
             // 
@@ -86,6 +99,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btnAyuda);
             this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.textBox1);
             this.panel2.Controls.Add(this.label1);
@@ -136,12 +150,16 @@
             this.bAgregar.UseVisualStyleBackColor = true;
             this.bAgregar.Click += new System.EventHandler(this.bAgregar_Click);
             // 
-            // enviarToolStripMenuItem
+            // btnAyuda
             // 
-            this.enviarToolStripMenuItem.Name = "enviarToolStripMenuItem";
-            this.enviarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.enviarToolStripMenuItem.Text = "Enviar";
-            this.enviarToolStripMenuItem.Click += new System.EventHandler(this.enviarToolStripMenuItem_Click);
+            this.btnAyuda.AutoSize = true;
+            this.btnAyuda.Location = new System.Drawing.Point(30, 217);
+            this.btnAyuda.Name = "btnAyuda";
+            this.btnAyuda.Size = new System.Drawing.Size(75, 42);
+            this.btnAyuda.TabIndex = 13;
+            this.btnAyuda.Text = "Ayuda";
+            this.btnAyuda.UseVisualStyleBackColor = true;
+            this.btnAyuda.Click += new System.EventHandler(this.btnAyuda_Click);
             // 
             // Form_Clientes
             // 
@@ -172,5 +190,6 @@
         private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ToolStripMenuItem enviarToolStripMenuItem;
+        private System.Windows.Forms.Button btnAyuda;
     }
 }

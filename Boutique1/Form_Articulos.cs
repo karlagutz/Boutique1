@@ -142,6 +142,17 @@ namespace Boutique1
 
         }
 
+        private void btnAyuda_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Para editar un articulo debe dar click derecho\n"+
+                                    "en el articulo que desee editar y de click en editar.","Mensaje",MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void dgArticulos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
 
     }
 }

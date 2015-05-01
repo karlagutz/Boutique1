@@ -39,6 +39,7 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.enviarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnAyuda = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgArticulos)).BeginInit();
@@ -57,6 +58,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btnAyuda);
             this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.textBox1);
             this.panel2.Controls.Add(this.label1);
@@ -111,15 +113,21 @@
             // 
             // dgArticulos
             // 
+            this.dgArticulos.AllowUserToAddRows = false;
+            this.dgArticulos.AllowUserToDeleteRows = false;
             this.dgArticulos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgArticulos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgArticulos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgArticulos.ContextMenuStrip = this.contextMenuStrip1;
             this.dgArticulos.Location = new System.Drawing.Point(0, 0);
             this.dgArticulos.Name = "dgArticulos";
+            this.dgArticulos.ReadOnly = true;
             this.dgArticulos.Size = new System.Drawing.Size(558, 334);
             this.dgArticulos.TabIndex = 0;
+            this.dgArticulos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgArticulos_CellContentClick);
             this.dgArticulos.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dgArticulos_MouseDown);
             // 
             // contextMenuStrip1
@@ -143,6 +151,17 @@
             this.enviarToolStripMenuItem.Size = new System.Drawing.Size(106, 22);
             this.enviarToolStripMenuItem.Text = "Enviar";
             this.enviarToolStripMenuItem.Click += new System.EventHandler(this.enviarToolStripMenuItem_Click);
+            // 
+            // btnAyuda
+            // 
+            this.btnAyuda.AutoSize = true;
+            this.btnAyuda.Location = new System.Drawing.Point(30, 214);
+            this.btnAyuda.Name = "btnAyuda";
+            this.btnAyuda.Size = new System.Drawing.Size(75, 42);
+            this.btnAyuda.TabIndex = 6;
+            this.btnAyuda.Text = "Ayuda";
+            this.btnAyuda.UseVisualStyleBackColor = true;
+            this.btnAyuda.Click += new System.EventHandler(this.btnAyuda_Click);
             // 
             // Form_Articulos
             // 
@@ -175,5 +194,6 @@
         private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ToolStripMenuItem enviarToolStripMenuItem;
+        private System.Windows.Forms.Button btnAyuda;
     }
 }

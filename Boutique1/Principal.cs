@@ -99,6 +99,16 @@ namespace Boutique1
                 case "Form_AgregarArticulos.cs":
                     farticu = null;
                     break;
+                case "Form_AgregarUsuario.cs":
+                    FAgreagarUsuario = null;
+                    break;
+                case "Form_Usuarios.cs":
+                    FUsuarios = null;
+                    break;
+                case "Form_Apartados.cs":
+                    FApartados = null;
+                    break;
+
             }
         }
        
@@ -208,6 +218,101 @@ namespace Boutique1
             else
             {
                 farticu.Activate();
+            }
+        }
+
+        private void nuevoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void agregarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (fAgregarCliente == null)
+            {
+                fAgregarCliente = new Form_AgregarCliente();
+                fAgregarCliente.MdiParent = this;
+                fAgregarCliente.FormClosed += new FormClosedEventHandler(Forms_FormClosed);
+                // Display the new form.
+                fAgregarCliente.Show();
+            }
+            else
+            {
+                fAgregarCliente.Activate();
+            }
+        }
+        
+        private void agregarArticuloToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (farticu == null)
+            {
+                farticu = new Form_AgregarArticulos();
+                farticu.MdiParent = this;
+                farticu.FormClosed += new FormClosedEventHandler(Forms_FormClosed);
+                // Display the new form
+                farticu.Show();
+            }
+            else
+            {
+                farticu.Activate();
+            }
+        }
+
+        private void loginToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+        Form_Apartados FApartados;
+        private void apartadosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (FApartados == null)
+            {
+                FApartados = new Form_Apartados();
+                FApartados.MdiParent = this;
+                FApartados.FormClosed += new FormClosedEventHandler(Forms_FormClosed);
+                // Display the new form.
+                FApartados.Show();
+            }
+            else
+            {
+                FApartados.Activate();
+            }
+        }
+        Form_Usuarios FUsuarios;
+        private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (FUsuarios == null)
+            {
+                FUsuarios = new Form_Usuarios();
+                FUsuarios.MdiParent = this;
+                FUsuarios.FormClosed += new FormClosedEventHandler(Forms_FormClosed);
+                // Display the new form.
+                FUsuarios.Show();
+            }
+            else
+            {
+                FUsuarios.Activate();
+            }
+        }
+        Form_AgregarUsuario FAgreagarUsuario;
+        private void agregarUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (FAgreagarUsuario == null)
+            {
+                FAgreagarUsuario = new Form_AgregarUsuario();
+                FAgreagarUsuario.MdiParent = this;
+                FAgreagarUsuario.FormClosed += new FormClosedEventHandler(Forms_FormClosed);
+                // Display the new form.
+                FAgreagarUsuario.Show();
+            }
+            else
+            {
+                FAgreagarUsuario.Activate();
             }
         }
 

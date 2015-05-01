@@ -76,6 +76,7 @@ namespace Boutique1
        
         private void bEnviar_Click(object sender, EventArgs e)
         {
+           calcularTotal();
            int idVenta = Convert.ToInt32(txtIdVenta.Text);
            Hashtable h = new Hashtable();
            decimal d = Convert.ToDecimal(txtTotal.Text);
@@ -96,7 +97,7 @@ namespace Boutique1
                     h.Add("precioVenta", Convert.ToDecimal(rows[i].Cells[3].Value));
                     h.Add("total", Convert.ToDecimal(rows[i].Cells[4].Value));
 
-                    sql.ejecutarProcedimiento("dbo.nuevoDetalleVenta", h);
+                sql.ejecutarProcedimiento("dbo.nuevoDetalleVenta", h);
                 }
             }
             catch (Exception ex)
@@ -195,6 +196,9 @@ namespace Boutique1
 
         private void button1_Click(object sender, EventArgs e)
         {
+           
+        }
+        public void calcularTotal(){
             decimal total = 0;
             DataGridViewRowCollection col = dgVenta.Rows;
             for (int i = 0; i < col.Count; i++)
@@ -234,9 +238,16 @@ namespace Boutique1
 
         private void bNuevo_Click(object sender, EventArgs e)
         {
-
+           limpiar();
         }
 
-      
+        public void limpiar()
+        {
+            txtIDCliente.Text = "";
+            txtIdVenta.Text = "";
+            txtNombreCliente.Text = "";
+            txtTotal.Text = "";
+           //limpiar tabla dgVenta.
+        }
     }
 }

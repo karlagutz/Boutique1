@@ -52,35 +52,61 @@ namespace Boutique1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string desc = txtDesc.Text;
-            decimal precioVenta = Convert.ToDecimal(txtprecioventa.Text);
-            decimal precioCompra = Convert.ToDecimal(txtpreciocompra.Text);
-            int cantidad = Convert.ToInt32(txtcantidad.Text);
-
-
-            Hashtable hash = new Hashtable();
-            hash.Add("des", desc);
-            hash.Add("precioventa", precioVenta);
-            hash.Add("preciocompra", precioCompra);
-            hash.Add("cantidadStock", cantidad);
-            try
+            if (txtDesc.Text!="" && txtcantidad.Text!="" && txtpreciocompra.Text!="" &&
+                txtprecioventa.Text!="")
             {
-                sql.ejecutarProcedimiento("dbo.insertarArticulo", hash);
-                if (form != null)
+                try//try para solicitar solo números 
                 {
-                    form.actualizarGrid();
+                    string desc = txtDesc.Text;
+                    decimal precioVenta = Convert.ToDecimal(txtprecioventa.Text);
+                    decimal precioCompra = Convert.ToDecimal(txtpreciocompra.Text);
+                    int cantidad = Convert.ToInt32(txtcantidad.Text);
+
+                    Hashtable hash = new Hashtable();
+                    hash.Add("des", desc);
+                    hash.Add("precioventa", precioVenta);
+                    hash.Add("preciocompra", precioCompra);
+                    hash.Add("cantidadStock", cantidad);
+                    try
+                    {
+                        sql.ejecutarProcedimiento("dbo.insertarArticulo", hash);
+                        MessageBox.Show(this, "Artículo añadido exitosamente.");
+                        limpiar();
+
+                        if (form != null)
+                        {
+                            form.actualizarGrid();
+                        }
+                        
+                    }
+                    catch (Exception ex)
+                    {
+
+                        MessageBox.Show(ex.Message + ex.StackTrace);
+                    }
                 }
+                catch (Exception)
+                {
 
+                    MessageBox.Show(this,"Escriba solo números en los precios y cantidad.");
+                }
+                
             }
-            catch (Exception ex)
+            else
             {
-
-                MessageBox.Show(ex.Message + ex.StackTrace);
+                MessageBox.Show("Llene todos los datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                
             }
+           
         }
 
         private void editar(object sender, EventArgs e)
         {
+            if (txtDesc.Text!="" && txtcantidad.Text!="" && txtpreciocompra.Text!="" &&
+                txtprecioventa.Text!="")
+            {
+                try//try para solicitar solo números 
+                {
             string descripcion = txtDesc.Text;
             decimal precioVenta = Convert.ToDecimal(txtprecioventa.Text);
             decimal precioCompra = Convert.ToDecimal(txtpreciocompra.Text);
@@ -96,14 +122,42 @@ namespace Boutique1
             try
             {
                 sql.ejecutarProcedimiento("dbo.actualizarArticulo", hash);
-                MessageBox.Show("Cliente editado correctamente. cierre la ventana si desea editar otro cliente");
+                MessageBox.Show("Articulo editado correctamente.\n Cierre la ventana si desea editar otro articulo.");
+                
             }
+
             catch (Exception ex)
             {
 
                 MessageBox.Show(ex.Message + ex.StackTrace);
             }
             form.actualizarGrid();
+
+                }
+                catch (Exception)
+                {
+
+                    MessageBox.Show(this, "Sólo se permiten números en los campos de precios y cantidad.");
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Llene todos los datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+               
+            }
         }
+
+        private void txtpreciocompra_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+       public void limpiar (){
+           txtprecioventa.Text = "";
+           txtDesc.Text = "";
+           txtcantidad.Text = "";
+           txtpreciocompra.Text = "";
+         }
     }
 }
