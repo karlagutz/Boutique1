@@ -53,14 +53,14 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.lbCambio = new System.Windows.Forms.Label();
+            this.txtPago = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.cbModoPago = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtPago = new System.Windows.Forms.TextBox();
-            this.lbCambio = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgVenta)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -311,6 +311,55 @@
             this.panel1.Size = new System.Drawing.Size(686, 495);
             this.panel1.TabIndex = 20;
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.Red;
+            this.label9.Location = new System.Drawing.Point(344, 453);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(14, 13);
+            this.label9.TabIndex = 27;
+            this.label9.Text = "$";
+            // 
+            // lbCambio
+            // 
+            this.lbCambio.AutoSize = true;
+            this.lbCambio.ForeColor = System.Drawing.Color.Red;
+            this.lbCambio.Location = new System.Drawing.Point(355, 453);
+            this.lbCambio.Name = "lbCambio";
+            this.lbCambio.Size = new System.Drawing.Size(13, 13);
+            this.lbCambio.TabIndex = 26;
+            this.lbCambio.Text = "0";
+            // 
+            // txtPago
+            // 
+            this.txtPago.Enabled = false;
+            this.txtPago.Location = new System.Drawing.Point(347, 415);
+            this.txtPago.MaxLength = 11;
+            this.txtPago.Name = "txtPago";
+            this.txtPago.Size = new System.Drawing.Size(100, 20);
+            this.txtPago.TabIndex = 25;
+            this.txtPago.TextChanged += new System.EventHandler(this.txtPago_TextChanged);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(289, 453);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(45, 13);
+            this.label8.TabIndex = 24;
+            this.label8.Text = "Cambio:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(289, 418);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(35, 13);
+            this.label4.TabIndex = 23;
+            this.label4.Text = "Pago:";
+            // 
             // cbModoPago
             // 
             this.cbModoPago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -342,55 +391,6 @@
             this.button1.Text = "Calcular";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(289, 418);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
-            this.label4.TabIndex = 23;
-            this.label4.Text = "Pago:";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(289, 453);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(45, 13);
-            this.label8.TabIndex = 24;
-            this.label8.Text = "Cambio:";
-            // 
-            // txtPago
-            // 
-            this.txtPago.Enabled = false;
-            this.txtPago.Location = new System.Drawing.Point(347, 415);
-            this.txtPago.MaxLength = 11;
-            this.txtPago.Name = "txtPago";
-            this.txtPago.Size = new System.Drawing.Size(100, 20);
-            this.txtPago.TabIndex = 25;
-            this.txtPago.TextChanged += new System.EventHandler(this.txtPago_TextChanged);
-            // 
-            // lbCambio
-            // 
-            this.lbCambio.AutoSize = true;
-            this.lbCambio.ForeColor = System.Drawing.Color.Red;
-            this.lbCambio.Location = new System.Drawing.Point(355, 453);
-            this.lbCambio.Name = "lbCambio";
-            this.lbCambio.Size = new System.Drawing.Size(13, 13);
-            this.lbCambio.TabIndex = 26;
-            this.lbCambio.Text = "0";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.Red;
-            this.label9.Location = new System.Drawing.Point(344, 453);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(14, 13);
-            this.label9.TabIndex = 27;
-            this.label9.Text = "$";
             // 
             // Form_Venta
             // 

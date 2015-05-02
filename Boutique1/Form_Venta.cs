@@ -18,13 +18,11 @@ namespace Boutique1
         public Form_Venta()
         {
             InitializeComponent();
-            lbFecha.Text = DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss t");
+            lbFecha.Text = DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss tt");
             int res = Convert.ToInt32(sql.ejecutarEscalar("SELECT IDENT_CURRENT('ventas')"));
             int mas = res == 1? 0 : 1;
             txtIdVenta.Text = Convert.ToString(res + mas);
             cbModoPago.SelectedIndex = 0;
-            
-            
         }
 
 

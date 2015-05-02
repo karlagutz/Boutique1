@@ -24,7 +24,8 @@ namespace Boutique1
         public static SQLConnector getInstance(){
             if (util == null)
             {
-                util = new SQLConnector("Data Source=DANI;Initial Catalog=BD_boutique;Integrated Security=True");
+                //util = new SQLConnector("Data Source=JAVIER-PC\\SQLEXPRESS;Initial Catalog=BD_boutique;Integrated Security=True");//CADENA DEL JAVIER
+                util = new SQLConnector("Data Source=DANI;Initial Catalog=BD_boutique;Integrated Security=True");// CADENA DE LA DANI
             }
             return util;
         }
@@ -50,7 +51,7 @@ namespace Boutique1
 
 
         /*
-            utilicen este metodo para realizar consulas desde c#. sql es el string donde pondran la consulta
+            utilicen este metodo para realizar consulas desde c#. sql es el string donde pondran la consulta.
          * 
          * ejemplo: DataTable data = <obejto SQLConncetor>.consultar("select * from productos");
          */

@@ -54,3 +54,6 @@ C:\Users\dany__000\Documents\GitHub\Boutique1\Boutique1\obj\Debug\Boutique1.cspr
 C:\Users\dany__000\Documents\GitHub\Boutique1\Boutique1\obj\Debug\Boutique1.Form_AgregarUsuario.resources
 C:\Users\dany__000\Documents\GitHub\Boutique1\Boutique1\obj\Debug\Boutique1.Form_Usuarios.resources
 C:\Users\dany__000\Documents\GitHub\Boutique1\Boutique1\obj\Debug\Boutique1.Form_DetalleVentas.resources
+C:\Users\franciscojavier\Documents\GitHub\Boutique1\Boutique1\obj\Debug\Boutique1.Form_AgregarUsuario.resources
+C:\Users\franciscojavier\Documents\GitHub\Boutique1\Boutique1\obj\Debug\Boutique1.Form_DetalleVentas.resources
+C:\Users\franciscojavier\Documents\GitHub\Boutique1\Boutique1\obj\Debug\Boutique1.Form_Usuarios.resources

@@ -96,18 +96,16 @@ namespace Boutique1
                     fVistaPrevia = null;
                     break;
 
-                case "Form_AgregarArticulos.cs":
+                case "Form_AgregarArticulos":
                     farticu = null;
                     break;
-                case "Form_AgregarUsuario.cs":
+                case "Form_AgregarUsuario":
                     FAgreagarUsuario = null;
                     break;
-                case "Form_Usuarios.cs":
+                case "Form_Usuarios":
                     FUsuarios = null;
                     break;
-                case "Form_Apartados.cs":
-                    FApartados = null;
-                    break;
+                
 
             }
         }
@@ -119,22 +117,8 @@ namespace Boutique1
           
         }
 
-        Form_AgregarCliente fAgregarCliente;
-        private void agregarClienteToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (fAgregarCliente == null)
-            {
-                fAgregarCliente = new Form_AgregarCliente();
-                fAgregarCliente.MdiParent = this;
-                fAgregarCliente.FormClosed += new FormClosedEventHandler(Forms_FormClosed);
-                // Display the new form.
-                fAgregarCliente.Show();
-            }
-            else
-            {
-                fAgregarCliente.Activate();
-            }
-        }
+       
+        
 
         Form_Clientes fClientes;
         private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -226,6 +210,7 @@ namespace Boutique1
 
         }
 
+        Form_AgregarCliente fAgregarCliente;
         private void agregarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (fAgregarCliente == null)
@@ -267,21 +252,9 @@ namespace Boutique1
         {
 
         }
-        Form_Apartados FApartados;
         private void apartadosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (FApartados == null)
-            {
-                FApartados = new Form_Apartados();
-                FApartados.MdiParent = this;
-                FApartados.FormClosed += new FormClosedEventHandler(Forms_FormClosed);
-                // Display the new form.
-                FApartados.Show();
-            }
-            else
-            {
-                FApartados.Activate();
-            }
+            
         }
         Form_Usuarios FUsuarios;
         private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -314,6 +287,11 @@ namespace Boutique1
             {
                 FAgreagarUsuario.Activate();
             }
+        }
+
+        private void verVentasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
 
        
