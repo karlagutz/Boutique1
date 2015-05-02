@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -7,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace Boutique1
 {
@@ -17,6 +19,8 @@ namespace Boutique1
         {
             InitializeComponent();
         }
+       
+
         Form_Cobrar fcobrar;
         private void bAbonar_Click(object sender, EventArgs e)
         {

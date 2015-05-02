@@ -28,13 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgUsuarios = new System.Windows.Forms.DataGridView();
             this.btnAyuda = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.bAgregar = new System.Windows.Forms.Button();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.editartoolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgUsuarios)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtBuscar
@@ -66,7 +70,7 @@
             this.dgUsuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgUsuarios.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgUsuarios.Location = new System.Drawing.Point(-5, 12);
+            this.dgUsuarios.Location = new System.Drawing.Point(11, 19);
             this.dgUsuarios.Name = "dgUsuarios";
             this.dgUsuarios.ReadOnly = true;
             this.dgUsuarios.Size = new System.Drawing.Size(361, 215);
@@ -106,6 +110,21 @@
             this.bAgregar.UseVisualStyleBackColor = true;
             this.bAgregar.Click += new System.EventHandler(this.bAgregar_Click);
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.editartoolStripMenuItem1});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 48);
+            this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
+            // 
+            // editartoolStripMenuItem1
+            // 
+            this.editartoolStripMenuItem1.Name = "editartoolStripMenuItem1";
+            this.editartoolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.editartoolStripMenuItem1.Text = "Editar";
+            this.editartoolStripMenuItem1.Click += new System.EventHandler(this.editartoolStripMenuItem1_Click);
+            // 
             // Form_Usuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -120,6 +139,7 @@
             this.Name = "Form_Usuarios";
             this.Text = "Form_Usuarios";
             ((System.ComponentModel.ISupportInitialize)(this.dgUsuarios)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -133,5 +153,7 @@
         private System.Windows.Forms.Button btnAyuda;
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.Button bAgregar;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem editartoolStripMenuItem1;
     }
 }

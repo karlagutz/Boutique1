@@ -53,8 +53,9 @@
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(106, 13);
+            this.txtNombre.MaxLength = 50;
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(100, 20);
+            this.txtNombre.Size = new System.Drawing.Size(242, 20);
             this.txtNombre.TabIndex = 1;
             // 
             // txtTelefono
@@ -96,8 +97,9 @@
             // txtDireccion
             // 
             this.txtDireccion.Location = new System.Drawing.Point(106, 44);
+            this.txtDireccion.MaxLength = 100;
             this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(100, 20);
+            this.txtDireccion.Size = new System.Drawing.Size(242, 20);
             this.txtDireccion.TabIndex = 7;
             // 
             // txtCredito
@@ -122,8 +124,9 @@
             // txtcorreo
             // 
             this.txtcorreo.Location = new System.Drawing.Point(106, 78);
+            this.txtcorreo.MaxLength = 50;
             this.txtcorreo.Name = "txtcorreo";
-            this.txtcorreo.Size = new System.Drawing.Size(100, 20);
+            this.txtcorreo.Size = new System.Drawing.Size(183, 20);
             this.txtcorreo.TabIndex = 11;
             // 
             // label5
@@ -139,7 +142,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(295, 260);
+            this.ClientSize = new System.Drawing.Size(372, 260);
             this.Controls.Add(this.txtcorreo);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.bAgregar);

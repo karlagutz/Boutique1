@@ -51,13 +51,15 @@
             // txtDesc
             // 
             this.txtDesc.Location = new System.Drawing.Point(110, 32);
+            this.txtDesc.MaxLength = 50;
             this.txtDesc.Name = "txtDesc";
-            this.txtDesc.Size = new System.Drawing.Size(100, 20);
+            this.txtDesc.Size = new System.Drawing.Size(176, 20);
             this.txtDesc.TabIndex = 1;
             // 
             // txtprecioventa
             // 
             this.txtprecioventa.Location = new System.Drawing.Point(110, 64);
+            this.txtprecioventa.MaxLength = 11;
             this.txtprecioventa.Name = "txtprecioventa";
             this.txtprecioventa.Size = new System.Drawing.Size(100, 20);
             this.txtprecioventa.TabIndex = 3;
@@ -75,6 +77,7 @@
             // txtpreciocompra
             // 
             this.txtpreciocompra.Location = new System.Drawing.Point(110, 103);
+            this.txtpreciocompra.MaxLength = 11;
             this.txtpreciocompra.Name = "txtpreciocompra";
             this.txtpreciocompra.Size = new System.Drawing.Size(100, 20);
             this.txtpreciocompra.TabIndex = 5;
@@ -92,6 +95,7 @@
             // txtcantidad
             // 
             this.txtcantidad.Location = new System.Drawing.Point(110, 139);
+            this.txtcantidad.MaxLength = 11;
             this.txtcantidad.Name = "txtcantidad";
             this.txtcantidad.Size = new System.Drawing.Size(100, 20);
             this.txtcantidad.TabIndex = 7;

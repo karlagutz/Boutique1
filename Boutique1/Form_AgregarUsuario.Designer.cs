@@ -66,7 +66,7 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(170, 141);
+            this.btnAgregar.Location = new System.Drawing.Point(208, 141);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(75, 23);
             this.btnAgregar.TabIndex = 3;
@@ -77,8 +77,9 @@
             // txtUsuario
             // 
             this.txtUsuario.Location = new System.Drawing.Point(127, 34);
+            this.txtUsuario.MaxLength = 50;
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(118, 20);
+            this.txtUsuario.Size = new System.Drawing.Size(156, 20);
             this.txtUsuario.TabIndex = 4;
             // 
             // cbTipo
@@ -89,21 +90,23 @@
             "Administrador"});
             this.cbTipo.Location = new System.Drawing.Point(127, 99);
             this.cbTipo.Name = "cbTipo";
-            this.cbTipo.Size = new System.Drawing.Size(53, 21);
+            this.cbTipo.Size = new System.Drawing.Size(156, 21);
             this.cbTipo.TabIndex = 5;
             // 
             // txtContrasenia
             // 
             this.txtContrasenia.Location = new System.Drawing.Point(127, 66);
+            this.txtContrasenia.MaxLength = 20;
             this.txtContrasenia.Name = "txtContrasenia";
-            this.txtContrasenia.Size = new System.Drawing.Size(118, 20);
+            this.txtContrasenia.PasswordChar = '*';
+            this.txtContrasenia.Size = new System.Drawing.Size(156, 20);
             this.txtContrasenia.TabIndex = 6;
             // 
             // Form_AgregarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(265, 176);
+            this.ClientSize = new System.Drawing.Size(308, 176);
             this.Controls.Add(this.txtContrasenia);
             this.Controls.Add(this.cbTipo);
             this.Controls.Add(this.txtUsuario);

@@ -53,9 +53,14 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.cbModoPago = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtPago = new System.Windows.Forms.TextBox();
+            this.lbCambio = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgVenta)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -158,7 +163,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(223, 378);
+            this.label5.Location = new System.Drawing.Point(50, 382);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(40, 13);
             this.label5.TabIndex = 9;
@@ -168,7 +173,7 @@
             // lbFecha
             // 
             this.lbFecha.AutoSize = true;
-            this.lbFecha.Location = new System.Drawing.Point(266, 378);
+            this.lbFecha.Location = new System.Drawing.Point(96, 382);
             this.lbFecha.Name = "lbFecha";
             this.lbFecha.Size = new System.Drawing.Size(112, 13);
             this.lbFecha.TabIndex = 10;
@@ -254,7 +259,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(229, 418);
+            this.label6.Location = new System.Drawing.Point(50, 418);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(34, 13);
             this.label6.TabIndex = 19;
@@ -263,7 +268,7 @@
             // 
             // txtTotal
             // 
-            this.txtTotal.Location = new System.Drawing.Point(269, 415);
+            this.txtTotal.Location = new System.Drawing.Point(98, 415);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.ReadOnly = true;
             this.txtTotal.Size = new System.Drawing.Size(121, 20);
@@ -274,6 +279,11 @@
             // 
             this.panel1.AutoSize = true;
             this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panel1.Controls.Add(this.label9);
+            this.panel1.Controls.Add(this.lbCambio);
+            this.panel1.Controls.Add(this.txtPago);
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.cbModoPago);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.button1);
@@ -301,16 +311,6 @@
             this.panel1.Size = new System.Drawing.Size(686, 495);
             this.panel1.TabIndex = 20;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(396, 412);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(56, 23);
-            this.button1.TabIndex = 20;
-            this.button1.Text = "Calcular";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // cbModoPago
             // 
             this.cbModoPago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -332,6 +332,65 @@
             this.label3.Size = new System.Drawing.Size(80, 13);
             this.label3.TabIndex = 21;
             this.label3.Text = "Modo de Pago:";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(163, 453);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(56, 23);
+            this.button1.TabIndex = 20;
+            this.button1.Text = "Calcular";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(289, 418);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(35, 13);
+            this.label4.TabIndex = 23;
+            this.label4.Text = "Pago:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(289, 453);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(45, 13);
+            this.label8.TabIndex = 24;
+            this.label8.Text = "Cambio:";
+            // 
+            // txtPago
+            // 
+            this.txtPago.Enabled = false;
+            this.txtPago.Location = new System.Drawing.Point(347, 415);
+            this.txtPago.MaxLength = 11;
+            this.txtPago.Name = "txtPago";
+            this.txtPago.Size = new System.Drawing.Size(100, 20);
+            this.txtPago.TabIndex = 25;
+            this.txtPago.TextChanged += new System.EventHandler(this.txtPago_TextChanged);
+            // 
+            // lbCambio
+            // 
+            this.lbCambio.AutoSize = true;
+            this.lbCambio.ForeColor = System.Drawing.Color.Red;
+            this.lbCambio.Location = new System.Drawing.Point(355, 453);
+            this.lbCambio.Name = "lbCambio";
+            this.lbCambio.Size = new System.Drawing.Size(13, 13);
+            this.lbCambio.TabIndex = 26;
+            this.lbCambio.Text = "0";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.Red;
+            this.label9.Location = new System.Drawing.Point(344, 453);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(14, 13);
+            this.label9.TabIndex = 27;
+            this.label9.Text = "$";
             // 
             // Form_Venta
             // 
@@ -378,5 +437,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Almacen;
         private System.Windows.Forms.ComboBox cbModoPago;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtPago;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lbCambio;
     }
 }

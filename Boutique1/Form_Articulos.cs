@@ -75,6 +75,7 @@ namespace Boutique1
 
             ac.MdiParent = this.MdiParent;
             ac.Show();
+            
         }
 
 

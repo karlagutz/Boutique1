@@ -76,40 +76,55 @@ namespace Boutique1
        
         private void bEnviar_Click(object sender, EventArgs e)
         {
-           calcularTotal();
-           int idVenta = Convert.ToInt32(txtIdVenta.Text);
-           Hashtable h = new Hashtable();
-           decimal d = Convert.ToDecimal(txtTotal.Text);
-            h.Add("precioTotal",d);
-            h.Add("fecha",DateTime.Now);
-            h.Add("modoPago", cbModoPago.SelectedText);
-            h.Add("idCliente", txtIDCliente.Text);
-            DataGridViewRowCollection rows = dgVenta.Rows;
-            try
-            {
-                sql.ejecutarProcedimiento("dbo.nuevaVenta", h);
-                for (int i = 0; i < rows.Count - 1; i++)
-                {
-                    h = new Hashtable();
-                    h.Add("id_articulo", Convert.ToInt32(rows[i].Cells[0].Value));
-                    h.Add("id_venta",idVenta);
-                    h.Add("cantidadAComprar", Convert.ToInt32(rows[i].Cells[2].Value));
-                    h.Add("precioVenta", Convert.ToDecimal(rows[i].Cells[3].Value));
-                    h.Add("total", Convert.ToDecimal(rows[i].Cells[4].Value));
 
-                sql.ejecutarProcedimiento("dbo.nuevoDetalleVenta", h);
+            if (txtNombreCliente.Text!="" && txtTotal.Text!="" && txtPago.Text!="")
+            {
+                calcularTotal();
+                int idVenta = Convert.ToInt32(txtIdVenta.Text);
+                Hashtable h = new Hashtable();
+                decimal d = Convert.ToDecimal(txtTotal.Text);
+                h.Add("precioTotal", d);
+                h.Add("fecha", DateTime.Now);
+                h.Add("modoPago", Convert.ToString(cbModoPago.Text));
+                h.Add("idCliente", txtIDCliente.Text);
+                DataGridViewRowCollection rows = dgVenta.Rows;
+                try
+                {
+                    sql.ejecutarProcedimiento("dbo.nuevaVenta", h);
+                    for (int i = 0; i < rows.Count - 1; i++)
+                    {
+                        h = new Hashtable();
+                        h.Add("id_articulo", Convert.ToInt32(rows[i].Cells[0].Value));
+                        h.Add("id_venta", idVenta);
+                        h.Add("cantidadAComprar", Convert.ToInt32(rows[i].Cells[2].Value));
+                        h.Add("precioVenta", Convert.ToDecimal(rows[i].Cells[3].Value));
+                        h.Add("total", Convert.ToDecimal(rows[i].Cells[4].Value));
+
+                        sql.ejecutarProcedimiento("dbo.nuevoDetalleVenta", h);
+                        double total = Convert.ToDouble(txtTotal.Text);
+                        double pago = Convert.ToDouble(txtPago.Text);
+                        string cambio = Convert.ToString(pago-total);
+                        lbCambio.Text = cambio;
+
+                    }
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show("Ingrese Bien los datos");
+                }
+
+                finally
+                {
+                    MessageBox.Show("Venta Realizada");
                 }
             }
-            catch (Exception ex)
+            else
             {
-
-                MessageBox.Show("Ingrese Bien los datos");
+                MessageBox.Show("No ha seleccionado un cliente y/o articulo(s).","Error",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
             }
 
-            finally 
-            {
-                MessageBox.Show("Venta Realizada");
-            }
+           
 
         }
 
@@ -196,7 +211,8 @@ namespace Boutique1
 
         private void button1_Click(object sender, EventArgs e)
         {
-           
+            calcularTotal();
+            txtPago.Enabled = true;
         }
         public void calcularTotal(){
             decimal total = 0;
@@ -243,11 +259,22 @@ namespace Boutique1
 
         public void limpiar()
         {
-            txtIDCliente.Text = "";
-            txtIdVenta.Text = "";
+            txtPago.Enabled = false;
+            txtIDCliente.Text = "";          
             txtNombreCliente.Text = "";
             txtTotal.Text = "";
-           //limpiar tabla dgVenta.
+            dgVenta.Rows.Clear();
+            txtPago.Text = "";
+            lbCambio.Text = "0";
+            int res = Convert.ToInt32(sql.ejecutarEscalar("SELECT IDENT_CURRENT('ventas')"));
+            int mas = res == 1 ? 0 : 1;
+            txtIdVenta.Text = Convert.ToString(res + mas);
+
+        }
+
+        private void txtPago_TextChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }
