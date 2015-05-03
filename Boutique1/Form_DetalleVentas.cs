@@ -28,9 +28,10 @@ namespace Boutique1
         }
         public void actualizarGrid()
         {
-            dtGrid = sql.consultar("SELECT * FROM Ventas");
+            dtGrid = sql.consultar("SELECT v.id_venta as Folio, c.nombre as Cliente, v.fecha as Fecha,v.modoPago as 'Modo Pago', v.precioTotal as 'Precio Total' FROM Ventas v, Clientes c WHERE v.id_cliente=c.id_cliente ");
 
             dgDetalleVentas.DataSource = dtGrid;
+         
            
         }
 
