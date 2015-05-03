@@ -15,7 +15,7 @@ namespace Boutique1
     public partial class Form_AgregarCliente : Form
     {
         SQLConnector sql = SQLConnector.getInstance();
-
+        DataTable dtGrid2;
         private int id;
         private string nombre;
         private string direccion;
@@ -121,9 +121,6 @@ namespace Boutique1
                     MessageBox.Show("Añada datos validos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     throw;
                 }
-                
-
-
             }
             else
             {
@@ -134,30 +131,48 @@ namespace Boutique1
 
         private void editar(object sender, EventArgs e)
         {
-            string nombre = txtNombre.Text;
-            string direccion = txtDireccion.Text;
-            string correo = txtcorreo.Text;
-            string tel = txtTelefono.Text;
-            decimal credito = Convert.ToDecimal(txtCredito.Text);
+                //if que verifica que no hay campos vacios
+                if (txtNombre.Text != "" && txtCredito.Text != "" && txtDireccion.Text != "" && txtcorreo.Text != "" && txtTelefono.Text != "")
+                {
+                    try//Evita errores cuando cuando se llenan campos con diferentes tipos de variables
+                    {
+                        string nombre = txtNombre.Text;
+                        string direccion = txtDireccion.Text;
+                        string correo = txtcorreo.Text;
+                        string tel = txtTelefono.Text;
+                        decimal credito = Convert.ToDecimal(txtCredito.Text);
 
-            Hashtable hash = new Hashtable();
-            hash.Add("id", id);
-            hash.Add("nombre", nombre);
-            hash.Add("direccion", direccion);
-            hash.Add("correo", correo);
-            hash.Add("telefono", tel);
-            hash.Add("credito", credito);
-            try
-            {
-                sql.ejecutarProcedimiento("dbo.actualizarCliente", hash);
-                MessageBox.Show("Cliente editado correctamente.\nCierre la ventana si desea editar otro cliente" );
-            }
-            catch (Exception ex)
-            {
+                        Hashtable hash = new Hashtable();
+                        hash.Add("id", id);
+                        hash.Add("nombre", nombre);
+                        hash.Add("direccion", direccion);
+                        hash.Add("correo", correo);
+                        hash.Add("telefono", tel);
+                        hash.Add("credito", credito);
+                        try
+                        {
+                            sql.ejecutarProcedimiento("dbo.actualizarCliente", hash);
+                            MessageBox.Show("Cliente editado correctamente.\nCierre la ventana si desea editar otro cliente");
+                        }
+                        catch (Exception ex)
+                        {
 
-                MessageBox.Show(ex.Message + ex.StackTrace);
-            }
-            form.actualizarGrid();
+                            MessageBox.Show(ex.Message + ex.StackTrace);
+                        }
+                        form.actualizarGrid();
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Añada datos validos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        throw;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Llene todos los datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }  
+          
+            
         }
     }
 }

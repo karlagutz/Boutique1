@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.RVistaPrevia = new Microsoft.Reporting.WinForms.ReportViewer();
             this.SuspendLayout();
             // 
@@ -35,8 +37,11 @@
             // 
             this.RVistaPrevia.AutoScroll = true;
             this.RVistaPrevia.Dock = System.Windows.Forms.DockStyle.Fill;
+            reportDataSource2.Name = "DataSet1";
+            this.RVistaPrevia.LocalReport.DataSources.Add(reportDataSource2);
             this.RVistaPrevia.Location = new System.Drawing.Point(0, 0);
             this.RVistaPrevia.Name = "RVistaPrevia";
+            this.RVistaPrevia.ProcessingMode = Microsoft.Reporting.WinForms.ProcessingMode.Remote;
             this.RVistaPrevia.Size = new System.Drawing.Size(694, 547);
             this.RVistaPrevia.TabIndex = 0;
             // 

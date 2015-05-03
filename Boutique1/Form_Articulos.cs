@@ -67,15 +67,23 @@ namespace Boutique1
         Form_AgregarArticulos ac;
         private void editarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DataGridViewCellCollection dgcc = dgArticulos.SelectedRows[0].Cells;
+            if (dgArticulos.SelectedRows.Count!=0)
+            {
+                DataGridViewCellCollection dgcc = dgArticulos.SelectedRows[0].Cells;
 
-            ac = new Form_AgregarArticulos(Convert.ToInt32(dgcc[0].Value), Convert.ToString(dgcc[1].Value),
-                                        Convert.ToString(dgcc[2].Value), Convert.ToString(dgcc[3].Value),
-                                        Convert.ToString(dgcc[4].Value), this);
+                ac = new Form_AgregarArticulos(Convert.ToInt32(dgcc[0].Value), Convert.ToString(dgcc[1].Value),
+                                            Convert.ToString(dgcc[2].Value), Convert.ToString(dgcc[3].Value),
+                                            Convert.ToString(dgcc[4].Value), this);
 
-            ac.MdiParent = this.MdiParent;
-            ac.Show();
+                ac.MdiParent = this.MdiParent;
+                ac.Show();
+            }
+            else
+            {
+                MessageBox.Show("Seleccione un articulo.");
+            }
             
+          
         }
 
 
@@ -145,14 +153,16 @@ namespace Boutique1
 
         private void btnAyuda_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Para editar un articulo debe dar click derecho\n"+
-                                    "en el articulo que desee editar y de click en editar.","Mensaje",MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Para editar o eliminar un articulo debe dar click derecho\n"+
+                                    "en el articulo que desee editar.","Mensaje",MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void dgArticulos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
+
+       
 
 
     }

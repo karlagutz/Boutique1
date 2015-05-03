@@ -37,6 +37,7 @@
             this.bAgregar = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.editartoolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.Eliminar = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgUsuarios)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -44,16 +45,17 @@
             // txtBuscar
             // 
             this.txtBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtBuscar.Location = new System.Drawing.Point(378, 38);
+            this.txtBuscar.Location = new System.Drawing.Point(381, 44);
+            this.txtBuscar.MaxLength = 50;
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(117, 20);
             this.txtBuscar.TabIndex = 10;
-            this.txtBuscar.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(378, 12);
+            this.label1.Location = new System.Drawing.Point(378, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(40, 13);
             this.label1.TabIndex = 9;
@@ -64,23 +66,22 @@
             // 
             this.dgUsuarios.AllowUserToAddRows = false;
             this.dgUsuarios.AllowUserToDeleteRows = false;
-            this.dgUsuarios.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgUsuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgUsuarios.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgUsuarios.ContextMenuStrip = this.contextMenuStrip1;
             this.dgUsuarios.Location = new System.Drawing.Point(11, 19);
             this.dgUsuarios.Name = "dgUsuarios";
             this.dgUsuarios.ReadOnly = true;
             this.dgUsuarios.Size = new System.Drawing.Size(361, 215);
             this.dgUsuarios.TabIndex = 7;
             this.dgUsuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgArticulos_CellContentClick);
+            this.dgUsuarios.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dgUsuarios_MouseDown);
             // 
             // btnAyuda
             // 
             this.btnAyuda.AutoSize = true;
-            this.btnAyuda.Location = new System.Drawing.Point(381, 185);
+            this.btnAyuda.Location = new System.Drawing.Point(381, 192);
             this.btnAyuda.Name = "btnAyuda";
             this.btnAyuda.Size = new System.Drawing.Size(75, 42);
             this.btnAyuda.TabIndex = 12;
@@ -91,7 +92,7 @@
             // btnActualizar
             // 
             this.btnActualizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnActualizar.Location = new System.Drawing.Point(381, 129);
+            this.btnActualizar.Location = new System.Drawing.Point(381, 135);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(75, 40);
             this.btnActualizar.TabIndex = 11;
@@ -102,7 +103,7 @@
             // bAgregar
             // 
             this.bAgregar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.bAgregar.Location = new System.Drawing.Point(381, 74);
+            this.bAgregar.Location = new System.Drawing.Point(381, 79);
             this.bAgregar.Name = "bAgregar";
             this.bAgregar.Size = new System.Drawing.Size(75, 40);
             this.bAgregar.TabIndex = 8;
@@ -113,17 +114,25 @@
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.editartoolStripMenuItem1});
+            this.editartoolStripMenuItem1,
+            this.Eliminar});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 48);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 70);
             this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
             // editartoolStripMenuItem1
             // 
             this.editartoolStripMenuItem1.Name = "editartoolStripMenuItem1";
-            this.editartoolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.editartoolStripMenuItem1.Size = new System.Drawing.Size(117, 22);
             this.editartoolStripMenuItem1.Text = "Editar";
             this.editartoolStripMenuItem1.Click += new System.EventHandler(this.editartoolStripMenuItem1_Click);
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.Size = new System.Drawing.Size(152, 22);
+            this.Eliminar.Text = "Eliminar";
+            this.Eliminar.Click += new System.EventHandler(this.Eliminar_Click);
             // 
             // Form_Usuarios
             // 
@@ -137,7 +146,8 @@
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.bAgregar);
             this.Name = "Form_Usuarios";
-            this.Text = "Form_Usuarios";
+            this.Text = "Usuarios";
+            this.Load += new System.EventHandler(this.Form_Usuarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgUsuarios)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -155,5 +165,6 @@
         private System.Windows.Forms.Button bAgregar;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem editartoolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem Eliminar;
     }
 }

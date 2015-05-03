@@ -139,5 +139,10 @@ namespace Boutique1
                                     "en el articulo que desee editar y de click en editar.","Mensaje",MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+        private void Form_Clientes_Load(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

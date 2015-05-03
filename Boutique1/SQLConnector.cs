@@ -73,6 +73,26 @@ namespace Boutique1
 	        }
             return ds.Tables[tabla];
         }
+        //opción 2
+        public DataTable consultar(string sql)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                con.Open();
+                adapter = new SqlDataAdapter(sql, con);
+
+                adapter.Fill(dt);
+
+                con.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error no se puede." + ex.Message + ex.StackTrace);
+            }
+            return dt;
+        }
 
 
         /*
@@ -194,6 +214,9 @@ namespace Boutique1
             }
 
             return res;
+        }
+        public void cerrarConexion(){
+            con.Close();
         }
     }
 }

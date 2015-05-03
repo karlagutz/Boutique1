@@ -106,7 +106,7 @@ namespace Boutique1
 
                     }
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
 
                     MessageBox.Show("Ingrese Bien los datos");
@@ -273,6 +273,27 @@ namespace Boutique1
         private void txtPago_TextChanged(object sender, EventArgs e)
         {
             
+        }
+
+        private void bReimprimir_Click(object sender, EventArgs e)
+        {
+            printDocument1.Print();
+        }
+
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            PaintEventArgs myPaintArgs = new PaintEventArgs(e.Graphics, new Rectangle(new Point(0, 0), this.Size));
+            this.InvokePaint(dgVenta, myPaintArgs);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void printPreviewDialog1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -16,17 +16,29 @@ namespace Boutique1
     {
         //private int childFormNumber = 0;
        // public event FormClosedEventHandler Form_FormClosed;
-       
-        public Principal()
+        int tipo;
+        public Principal(int tipo)
         {
             InitializeComponent();
+            this.tipo = tipo;
+            if (tipo==2)
+            {
+                agregarUsuarioToolStripMenuItem.Visible = true;
+                usuariosToolStripMenuItem.Visible = true;
+            }
+            else
+            {
+                agregarUsuarioToolStripMenuItem.Visible = false;
+                usuariosToolStripMenuItem.Visible = false;
+            }
+            
         }
 
        
 
         private void ExitToolsStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
 
@@ -105,21 +117,13 @@ namespace Boutique1
                 case "Form_Usuarios":
                     FUsuarios = null;
                     break;
-                
+                case "Form_DetalleVentas":
+                    fdetalleventas = null;
+                    break;
 
             }
         }
-       
-
-        private void Principal_Load(object sender, EventArgs e)
-        {
-
-          
-        }
-
-       
-        
-
+              
         Form_Clientes fClientes;
         private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -288,10 +292,27 @@ namespace Boutique1
                 FAgreagarUsuario.Activate();
             }
         }
-
+        Form_DetalleVentas fdetalleventas;
         private void verVentasToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (fdetalleventas == null)
+            {
+                fdetalleventas = new Form_DetalleVentas();
+                fdetalleventas.MdiParent = this;
+                fdetalleventas.FormClosed += new FormClosedEventHandler(Forms_FormClosed);
+                // Display the new form.
+                fdetalleventas.Show();
+            }
+            else
+            {
+                fdetalleventas.Activate();
+            }
+        }
 
+        private void cerrarSesiónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Application.Restart();
         }
 
        

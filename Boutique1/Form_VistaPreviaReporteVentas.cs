@@ -19,8 +19,7 @@ namespace Boutique1
 
         private void Form_VistaPreviaReporteVentas_Load(object sender, EventArgs e)
         {
-
-            this.RVistaPrevia.RefreshReport();
+            
         }
     }
 }
