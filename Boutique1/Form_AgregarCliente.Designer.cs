@@ -32,13 +32,13 @@
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtTelefono = new System.Windows.Forms.MaskedTextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtDireccion = new System.Windows.Forms.TextBox();
-            this.txtCredito = new System.Windows.Forms.MaskedTextBox();
             this.bAgregar = new System.Windows.Forms.Button();
             this.txtcorreo = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtCredito = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -75,15 +75,6 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Telefono:";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(15, 149);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(88, 13);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Limite de Credito:";
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -101,15 +92,6 @@
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(242, 20);
             this.txtDireccion.TabIndex = 7;
-            // 
-            // txtCredito
-            // 
-            this.txtCredito.Location = new System.Drawing.Point(106, 144);
-            this.txtCredito.Mask = "99999";
-            this.txtCredito.Name = "txtCredito";
-            this.txtCredito.Size = new System.Drawing.Size(100, 20);
-            this.txtCredito.TabIndex = 8;
-            this.txtCredito.ValidatingType = typeof(int);
             // 
             // bAgregar
             // 
@@ -137,6 +119,24 @@
             this.label5.Size = new System.Drawing.Size(41, 13);
             this.label5.TabIndex = 10;
             this.label5.Text = "Correo:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(15, 149);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(88, 13);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Limite de Credito:";
+            // 
+            // txtCredito
+            // 
+            this.txtCredito.Location = new System.Drawing.Point(106, 144);
+            this.txtCredito.Mask = "99999";
+            this.txtCredito.Name = "txtCredito";
+            this.txtCredito.Size = new System.Drawing.Size(100, 20);
+            this.txtCredito.TabIndex = 8;
+            this.txtCredito.ValidatingType = typeof(int);
             // 
             // Form_AgregarCliente
             // 
@@ -168,12 +168,12 @@
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.MaskedTextBox txtTelefono;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtDireccion;
-        private System.Windows.Forms.MaskedTextBox txtCredito;
         private System.Windows.Forms.Button bAgregar;
         private System.Windows.Forms.TextBox txtcorreo;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.MaskedTextBox txtCredito;
     }
 }

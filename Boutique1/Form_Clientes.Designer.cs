@@ -40,6 +40,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.bAgregar = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgClientes)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -99,6 +100,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.btnAyuda);
             this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.textBox1);
@@ -161,6 +163,16 @@
             this.bAgregar.UseVisualStyleBackColor = true;
             this.bAgregar.Click += new System.EventHandler(this.bAgregar_Click);
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(30, 274);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 43);
+            this.button2.TabIndex = 14;
+            this.button2.Text = "Guardar";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Form_Clientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -192,5 +204,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ToolStripMenuItem enviarToolStripMenuItem;
         private System.Windows.Forms.Button btnAyuda;
+        private System.Windows.Forms.Button button2;
     }
 }

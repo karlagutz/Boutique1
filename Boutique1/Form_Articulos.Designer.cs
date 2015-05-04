@@ -40,6 +40,7 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.enviarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgArticulos)).BeginInit();
@@ -58,6 +59,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.btnAyuda);
             this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.textBox1);
@@ -147,21 +149,31 @@
             this.editarToolStripMenuItem,
             this.enviarToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 70);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(107, 48);
             // 
             // editarToolStripMenuItem
             // 
             this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
-            this.editarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.editarToolStripMenuItem.Size = new System.Drawing.Size(106, 22);
             this.editarToolStripMenuItem.Text = "Editar";
             this.editarToolStripMenuItem.Click += new System.EventHandler(this.editarToolStripMenuItem_Click);
             // 
             // enviarToolStripMenuItem
             // 
             this.enviarToolStripMenuItem.Name = "enviarToolStripMenuItem";
-            this.enviarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.enviarToolStripMenuItem.Size = new System.Drawing.Size(106, 22);
             this.enviarToolStripMenuItem.Text = "Enviar";
             this.enviarToolStripMenuItem.Click += new System.EventHandler(this.enviarToolStripMenuItem_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(30, 272);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 40);
+            this.button2.TabIndex = 7;
+            this.button2.Text = "Guardar";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Form_Articulos
             // 
@@ -195,5 +207,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ToolStripMenuItem enviarToolStripMenuItem;
         private System.Windows.Forms.Button btnAyuda;
+        private System.Windows.Forms.Button button2;
     }
 }

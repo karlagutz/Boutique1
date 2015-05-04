@@ -15,7 +15,7 @@ namespace Boutique1
     public partial class Form_AgregarCliente : Form
     {
         SQLConnector sql = SQLConnector.getInstance();
-        DataTable dtGrid2;
+       // DataTable dtGrid2;
         private int id;
         private string nombre;
         private string direccion;

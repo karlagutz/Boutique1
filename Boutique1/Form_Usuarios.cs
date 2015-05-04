@@ -14,7 +14,7 @@ namespace Boutique1
     public partial class Form_Usuarios : Form
     {
         SQLConnector sql = SQLConnector.getInstance();
-        DataSet ds;
+        //DataSet ds;
         DataTable dtGrid;
         public Form_Usuarios()
         {

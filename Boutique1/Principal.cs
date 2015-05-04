@@ -25,11 +25,13 @@ namespace Boutique1
             {
                 agregarUsuarioToolStripMenuItem.Visible = true;
                 usuariosToolStripMenuItem.Visible = true;
+                verVentasToolStripMenuItem.Visible = true;
             }
             else
             {
                 agregarUsuarioToolStripMenuItem.Visible = false;
                 usuariosToolStripMenuItem.Visible = false;
+                verVentasToolStripMenuItem.Visible = false;
             }
             
         }
@@ -313,6 +315,11 @@ namespace Boutique1
         {
             this.Close();
             Application.Restart();
+        }
+
+        private void Principal_Load(object sender, EventArgs e)
+        {
+
         }
 
        

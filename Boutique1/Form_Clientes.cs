@@ -144,5 +144,58 @@ namespace Boutique1
 
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog dlGuardar = new SaveFileDialog();
+            dlGuardar.Filter = "Fichero CSV (*.csv)|*.csv";
+            dlGuardar.FileName = "Clientes";
+            dlGuardar.Title = "Exportar a CSV";
+            if (dlGuardar.ShowDialog() == DialogResult.OK)
+            {
+                StringBuilder csvMemoria = new StringBuilder();
+
+                //para los títulos de las columnas, encabezado
+                for (int i = 0; i < dgClientes.Columns.Count; i++)
+                {
+                    if (i == dgClientes.Columns.Count - 1)
+                    {
+                        csvMemoria.Append(String.Format("\"{0}\"",
+                            dgClientes.Columns[i].HeaderText));
+                    }
+                    else
+                    {
+                        csvMemoria.Append(String.Format("\"{0}\";",
+                            dgClientes.Columns[i].HeaderText));
+                    }
+                }
+                csvMemoria.AppendLine();
+
+
+                for (int m = 0; m < dgClientes.Rows.Count; m++)
+                {
+                    for (int n = 0; n < dgClientes.Columns.Count; n++)
+                    {
+                        //si es la última columna no poner el ;
+                        if (n == dgClientes.Columns.Count - 1)
+                        {
+                            csvMemoria.Append(String.Format("\"{0}\"",
+                                 dgClientes.Rows[m].Cells[n].Value));
+                        }
+                        else
+                        {
+                            csvMemoria.Append(String.Format("\"{0}\";",
+                                dgClientes.Rows[m].Cells[n].Value));
+                        }
+                    }
+                    csvMemoria.AppendLine();
+                }
+                System.IO.StreamWriter sw =
+                    new System.IO.StreamWriter(dlGuardar.FileName, false,
+                       System.Text.Encoding.Default);
+                sw.Write(csvMemoria.ToString());
+                sw.Close();
+            }
+        }
+
     }
 }
