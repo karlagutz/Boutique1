@@ -61,12 +61,13 @@ namespace Boutique1
             dtGrid2 = sql.consultar("SELECT * FROM Usuarios WHERE nombre='" + txtUsuario.Text +"'");
             //DataSet ds = new DataSet();
             // ds.Tables.Add(dtGrid);
-            DataRow DR2 = dtGrid2.Rows[0];
-            string nombreUsuario = DR2["nombre"].ToString();
+            //DataRow DR2 = dtGrid2.Rows[0];
+            //string nombreUsuario = DR2["nombre"].ToString();
             //Verificamos si existe el usuario
-            if (txtUsuario.Text!= nombreUsuario)
+            string nombreUsuario = ""; 
+            if (txtUsuario.Text != "" && txtContrasenia.Text != "" && cbTipo.SelectedIndex != -1)
             {
-                if (txtUsuario.Text != "" && txtContrasenia.Text != "" && cbTipo.SelectedIndex != -1)
+                if (dtGrid2.Rows.Count == 0)
                 {
                     nombreUsuario = txtUsuario.Text;
                     contraseña = txtContrasenia.Text;
@@ -92,13 +93,15 @@ namespace Boutique1
                 }
                 else
                 {
-                    MessageBox.Show("Llene todos los campos para registrar\n un usuario nuevo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    
+                    MessageBox.Show("Ya existe ese usuario intenta de nuevo.");
+                    limpiar();
                 }
             }
             else
             {
-                MessageBox.Show("Ya existe ese usuario intenta de nuevo.");
-                limpiar();
+                MessageBox.Show("Llene todos los campos para registrar\n un usuario nuevo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                
             }
             
         }

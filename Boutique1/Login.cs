@@ -27,36 +27,54 @@ namespace Boutique1
             Application.Exit();
         }
 
+
+
         private void bEntrar_Click(object sender, EventArgs e)
         {
-            if (txtUsuario.Text!="" && txtContra.Text!="")
+            string usuario = txtUsuario.Text;
+            string contra = txtContra.Text;
+
+            dtGrid = sql.consultar("SELECT * FROM Usuarios WHERE nombre='" + usuario + "' AND contraseña='" + contra + "'");
+
+            if (txtUsuario.Text != "" || txtContra.Text != "")
             {
-                string usuario = txtUsuario.Text;
-                string contra = txtContra.Text;
-                dtGrid = sql.consultar("SELECT * FROM Usuarios WHERE nombre='"+usuario+"' AND contraseña='"+contra+"'");
-               
-                DataRow DR= dtGrid.Rows[0];
-                string nombreUsuario = DR["nombre"].ToString();
-                string contraUsuario = DR["contraseña"].ToString();
-                tipoUsuario = Convert.ToInt32(DR["tipo"].ToString());
-                
-                if (usuario== nombreUsuario && contra==contraUsuario)
+                if (dtGrid.Rows.Count != 0)
                 {
-                    this.Hide();
-                   
-                    Principal prin = new Principal(tipoUsuario);
-                    prin.Show();
-                    sql.cerrarConexion();
-                    
-                 
+                    contra = txtContra.Text;
+                    usuario = txtUsuario.Text;
+
+                    DataRow DR = dtGrid.Rows[0];
+                    string nombreUsuario = DR["nombre"].ToString();
+                    string contraUsuario = DR["contraseña"].ToString();
+                    tipoUsuario = Convert.ToInt32(DR["tipo"].ToString());
+
+                    if (usuario == nombreUsuario && contra == contraUsuario)
+                    {
+                        this.Hide();
+
+                        Principal prin = new Principal(tipoUsuario);
+                        prin.Show();
+                        sql.cerrarConexion();
+
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Usuario y/o Contraseña incorrectos.");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Usuario y/o Contraseña incorrectos.");
+                    MessageBox.Show("Usuario No Existe");
                 }
             }
-            
+            else
+            {
+                MessageBox.Show("Ingrese Campos");
             }
+           
+            
+        }
 
         
 

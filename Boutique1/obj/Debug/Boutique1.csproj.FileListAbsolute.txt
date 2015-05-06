@@ -32,7 +32,6 @@ C:\Users\franciscojavier\Documents\GitHub\Boutique1\Boutique1\obj\Debug\Boutique
 C:\Users\franciscojavier\Documents\GitHub\Boutique1\Boutique1\obj\Debug\Boutique1.Form_Apartados.resources
 C:\Users\franciscojavier\Documents\GitHub\Boutique1\Boutique1\obj\Debug\Boutique1.Form_Cobrar.resources
 C:\Users\franciscojavier\Documents\GitHub\Boutique1\Boutique1\obj\Debug\Boutique1.Form_AgregarArticulos.resources
-C:\Users\franciscojavier\Documents\GitHub\Boutique1\Boutique1\obj\Debug\Boutique1.csprojResolveAssemblyReference.cache
 C:\Users\dany__000\Documents\GitHub\Boutique1\Boutique1\bin\Debug\Boutique1.exe.config
 C:\Users\dany__000\Documents\GitHub\Boutique1\Boutique1\obj\Debug\Boutique1.exe
 C:\Users\dany__000\Documents\GitHub\Boutique1\Boutique1\obj\Debug\Boutique1.pdb
