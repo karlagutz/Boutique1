@@ -24,8 +24,8 @@ namespace Boutique1
         public static SQLConnector getInstance(){
             if (util == null)
             {
-                util = new SQLConnector("Data Source=JAVIER-PC\\SQLEXPRESS;Initial Catalog=BD_boutique;Integrated Security=True");//CADENA DEL JAVIER
-                //util = new SQLConnector("Data Source=DANI;Initial Catalog=BD_boutique;Integrated Security=True");// CADENA DE LA DANI
+                //util = new SQLConnector("Data Source=JAVIER-PC\\SQLEXPRESS;Initial Catalog=BD_boutique;Integrated Security=True");//CADENA DEL JAVIER
+                util = new SQLConnector("Data Source=DANI;Initial Catalog=BD_boutique;Integrated Security=True");// CADENA DE LA DANI
             }
             return util;
         }
