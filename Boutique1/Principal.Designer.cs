@@ -221,7 +221,7 @@
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip;
             this.Name = "Principal";
-            this.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Text = "Sistema de Ventas";
             this.Load += new System.EventHandler(this.Principal_Load);
             this.menuStrip.ResumeLayout(false);
