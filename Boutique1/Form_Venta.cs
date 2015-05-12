@@ -97,14 +97,10 @@ namespace Boutique1
                         h.Add("cantidadAComprar", Convert.ToInt32(rows[i].Cells[2].Value));
                         h.Add("precioVenta", Convert.ToDecimal(rows[i].Cells[3].Value));
                         h.Add("total", Convert.ToDecimal(rows[i].Cells[4].Value));
-
                         sql.ejecutarProcedimiento("dbo.nuevoDetalleVenta", h);
-                        double total = Convert.ToDouble(txtTotal.Text);
-                        double pago = Convert.ToDouble(txtPago.Text);
-                        string cambio = Convert.ToString(pago-total);
-                        lbCambio.Text = cambio;
-
+                       
                     }
+                    limpiar();
                 }
                 catch (Exception)
                 {
@@ -277,7 +273,7 @@ namespace Boutique1
 
         private void bReimprimir_Click(object sender, EventArgs e)
         {
-            printDocument1.Print();
+           
         }
 
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
@@ -295,5 +291,32 @@ namespace Boutique1
         {
 
         }
+
+        private void bPagar_Click(object sender, EventArgs e)
+        {
+            if (txtTotal.Text!="" && txtTotal.Text!="")
+            {
+               
+            double total = Convert.ToDouble(txtTotal.Text);
+            double pago = Convert.ToDouble(txtPago.Text);
+            if (pago>= total)
+            {
+                 string cambio = Convert.ToString(pago - total);
+            lbCambio.Text = cambio;
+            }
+            else
+            {
+                MessageBox.Show("Ingrese un monto de pago mayor que el total de la venta.");
+            }
+           
+            }
+            else
+            {
+                MessageBox.Show("Debe haber un total y una cantidad de pago,\npara realizar esta operación.");
+            }
+            
+        }
+
+       
     }
 }

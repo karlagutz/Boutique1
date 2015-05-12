@@ -106,9 +106,6 @@ namespace Boutique1
                 case "Form_Clientes":
                     fClientes = null;
                     break;
-                case "Form_VistaPreviaReporteVentas":
-                    fVistaPrevia = null;
-                    break;
 
                 case "Form_AgregarArticulos":
                     farticu = null;
@@ -158,22 +155,7 @@ namespace Boutique1
                 fArticulos.Activate();
             }
         }
-        Form_VistaPreviaReporteVentas fVistaPrevia;
-        private void toolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            if (fVistaPrevia == null)
-            {
-                fVistaPrevia = new Form_VistaPreviaReporteVentas();
-                fVistaPrevia.MdiParent = this;
-                fVistaPrevia.FormClosed += new FormClosedEventHandler(Forms_FormClosed);
-                // Display the new form.
-                fVistaPrevia.Show();
-            }
-            else
-            {
-                fVistaPrevia.Activate();
-            }
-        }
+        
 
 
 

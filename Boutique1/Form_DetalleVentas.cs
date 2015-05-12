@@ -45,13 +45,14 @@ namespace Boutique1
             res.RowFilter = cadena;
             dgDetalleVentas.DataSource = res;
         }
+        
         Bitmap bitmap;
         private void button1_Click(object sender, EventArgs e)
         {
             //printDocument1.Print();
             //Resize DataGridView to full height.
             int height = dgDetalleVentas.Height;
-            dgDetalleVentas.Height = dgDetalleVentas.RowCount * dgDetalleVentas.RowTemplate.Height;
+            dgDetalleVentas.Height = (dgDetalleVentas.RowCount + 1 ) * dgDetalleVentas.RowTemplate.Height;
 
             //Create a Bitmap and draw the DataGridView on it.
             bitmap = new Bitmap(this.dgDetalleVentas.Width, this.dgDetalleVentas.Height);

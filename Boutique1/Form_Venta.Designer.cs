@@ -51,7 +51,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.txtIdVenta = new System.Windows.Forms.TextBox();
-            this.bReimprimir = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.bDescuento = new System.Windows.Forms.Button();
             this.txtNombreCliente = new System.Windows.Forms.TextBox();
@@ -64,6 +63,7 @@
             this.lbFecha = new System.Windows.Forms.Label();
             this.bNuevo = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
+            this.bPagar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgVenta)).BeginInit();
             this.SuspendLayout();
@@ -89,6 +89,7 @@
             this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel1.BackgroundImage = global::Boutique1.Properties.Resources.images;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.bPagar);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.lbCambio);
             this.panel1.Controls.Add(this.txtPago);
@@ -102,7 +103,6 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.txtIdVenta);
-            this.panel1.Controls.Add(this.bReimprimir);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.bDescuento);
             this.panel1.Controls.Add(this.txtNombreCliente);
@@ -284,7 +284,7 @@
             this.label6.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(21, 403);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(43, 14);
+            this.label6.Size = new System.Drawing.Size(42, 14);
             this.label6.TabIndex = 19;
             this.label6.Text = "Total:";
             this.label6.Click += new System.EventHandler(this.label6_Click);
@@ -296,16 +296,6 @@
             this.txtIdVenta.ReadOnly = true;
             this.txtIdVenta.Size = new System.Drawing.Size(160, 20);
             this.txtIdVenta.TabIndex = 1;
-            // 
-            // bReimprimir
-            // 
-            this.bReimprimir.Image = global::Boutique1.Properties.Resources.receive;
-            this.bReimprimir.Location = new System.Drawing.Point(576, 314);
-            this.bReimprimir.Name = "bReimprimir";
-            this.bReimprimir.Size = new System.Drawing.Size(75, 53);
-            this.bReimprimir.TabIndex = 18;
-            this.bReimprimir.UseVisualStyleBackColor = true;
-            this.bReimprimir.Click += new System.EventHandler(this.bReimprimir_Click);
             // 
             // label2
             // 
@@ -320,7 +310,7 @@
             // bDescuento
             // 
             this.bDescuento.Image = global::Boutique1.Properties.Resources.percentage2;
-            this.bDescuento.Location = new System.Drawing.Point(576, 253);
+            this.bDescuento.Location = new System.Drawing.Point(574, 307);
             this.bDescuento.Name = "bDescuento";
             this.bDescuento.Size = new System.Drawing.Size(75, 53);
             this.bDescuento.TabIndex = 17;
@@ -338,7 +328,7 @@
             // bBuscarArticulo
             // 
             this.bBuscarArticulo.Image = global::Boutique1.Properties.Resources.folder230;
-            this.bBuscarArticulo.Location = new System.Drawing.Point(576, 192);
+            this.bBuscarArticulo.Location = new System.Drawing.Point(574, 246);
             this.bBuscarArticulo.Name = "bBuscarArticulo";
             this.bBuscarArticulo.Size = new System.Drawing.Size(75, 53);
             this.bBuscarArticulo.TabIndex = 16;
@@ -355,10 +345,10 @@
             // 
             // bEnviar
             // 
-            this.bEnviar.Image = global::Boutique1.Properties.Resources.dollar178;
-            this.bEnviar.Location = new System.Drawing.Point(573, 378);
+            this.bEnviar.Image = global::Boutique1.Properties.Resources.bag;
+            this.bEnviar.Location = new System.Drawing.Point(558, 377);
             this.bEnviar.Name = "bEnviar";
-            this.bEnviar.Size = new System.Drawing.Size(78, 72);
+            this.bEnviar.Size = new System.Drawing.Size(91, 73);
             this.bEnviar.TabIndex = 15;
             this.bEnviar.UseVisualStyleBackColor = true;
             this.bEnviar.Click += new System.EventHandler(this.bEnviar_Click);
@@ -366,7 +356,7 @@
             // bBuscarCliente
             // 
             this.bBuscarCliente.Image = global::Boutique1.Properties.Resources.users57;
-            this.bBuscarCliente.Location = new System.Drawing.Point(576, 131);
+            this.bBuscarCliente.Location = new System.Drawing.Point(574, 185);
             this.bBuscarCliente.Name = "bBuscarCliente";
             this.bBuscarCliente.Size = new System.Drawing.Size(75, 53);
             this.bBuscarCliente.TabIndex = 14;
@@ -387,7 +377,7 @@
             // bCancelarArticulo
             // 
             this.bCancelarArticulo.Image = global::Boutique1.Properties.Resources.delete85__1_;
-            this.bCancelarArticulo.Location = new System.Drawing.Point(576, 70);
+            this.bCancelarArticulo.Location = new System.Drawing.Point(574, 124);
             this.bCancelarArticulo.Name = "bCancelarArticulo";
             this.bCancelarArticulo.Size = new System.Drawing.Size(75, 53);
             this.bCancelarArticulo.TabIndex = 13;
@@ -407,7 +397,7 @@
             // bNuevo
             // 
             this.bNuevo.Image = global::Boutique1.Properties.Resources.documents29__1_;
-            this.bNuevo.Location = new System.Drawing.Point(576, 9);
+            this.bNuevo.Location = new System.Drawing.Point(574, 63);
             this.bNuevo.Name = "bNuevo";
             this.bNuevo.Size = new System.Drawing.Size(75, 53);
             this.bNuevo.TabIndex = 12;
@@ -421,6 +411,17 @@
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(0, 13);
             this.label7.TabIndex = 11;
+            // 
+            // bPagar
+            // 
+            this.bPagar.CausesValidation = false;
+            this.bPagar.Image = global::Boutique1.Properties.Resources.dollar178;
+            this.bPagar.Location = new System.Drawing.Point(473, 377);
+            this.bPagar.Name = "bPagar";
+            this.bPagar.Size = new System.Drawing.Size(65, 49);
+            this.bPagar.TabIndex = 28;
+            this.bPagar.UseVisualStyleBackColor = true;
+            this.bPagar.Click += new System.EventHandler(this.bPagar_Click);
             // 
             // Form_Venta
             // 
@@ -454,7 +455,6 @@
         private System.Windows.Forms.Button bEnviar;
         private System.Windows.Forms.Button bBuscarArticulo;
         private System.Windows.Forms.Button bDescuento;
-        private System.Windows.Forms.Button bReimprimir;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtTotal;
         private System.Windows.Forms.Panel panel1;
@@ -474,5 +474,6 @@
         private System.Windows.Forms.Label lbCambio;
         private System.Drawing.Printing.PrintDocument printDocument1;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
+        private System.Windows.Forms.Button bPagar;
     }
 }
