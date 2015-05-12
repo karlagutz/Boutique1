@@ -182,6 +182,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\DataSources\Boutique1.Properties.Resources.datasource" />
     <None Include="Properties\DataSources\Boutique1.Properties.Settings.datasource" />
@@ -218,6 +219,35 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Imagenes\bag.png" />
+    <None Include="Resources\calculate.png" />
+    <None Include="Resources\folder230.png" />
+    <None Include="Resources\users57.png" />
+    <None Include="Resources\percentage2.png" />
+    <None Include="Resources\paper61.png" />
+    <None Include="Resources\paper6.png" />
+    <None Include="Resources\xatdefect-deep-blue-ipad-wallpaper.jpg" />
+    <None Include="Resources\images.jpg" />
+    <None Include="Resources\l_0881.jpg" />
+    <None Include="Resources\White-Wallpaper-Pattern-HD.jpg" />
+    <None Include="Resources\White-Curves-Wallpaper-PC.jpg" />
+    <None Include="Resources\l_109.jpg" />
+    <None Include="Resources\l_106.jpg" />
+    <None Include="Resources\l_088.jpg" />
+    <None Include="Imagenes\clockwise11.png" />
+    <Content Include="Imagenes\delete85 %281%29.png" />
+    <Content Include="Imagenes\delete85.png" />
+    <Content Include="Imagenes\documents29 %281%29.png" />
+    <Content Include="Imagenes\documents29.png" />
+    <Content Include="Imagenes\dollar178.png" />
+    <None Include="Imagenes\save29.png" />
+    <None Include="Imagenes\question5.png" />
+    <None Include="Imagenes\magnifier12.png" />
+    <Content Include="Imagenes\multiple25.png" />
+    <Content Include="Imagenes\receive.png" />
+    <Content Include="Imagenes\user168.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

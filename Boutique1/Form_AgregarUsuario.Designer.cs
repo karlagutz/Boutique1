@@ -40,43 +40,47 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 34);
+            this.label1.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(99, 13);
+            this.label1.Size = new System.Drawing.Size(132, 14);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nombre de usuario:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(21, 66);
+            this.label2.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(58, 52);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 13);
+            this.label2.Size = new System.Drawing.Size(86, 14);
             this.label2.TabIndex = 1;
             this.label2.Text = "Contraseña:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(21, 99);
+            this.label3.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(106, 84);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(31, 13);
+            this.label3.Size = new System.Drawing.Size(38, 14);
             this.label3.TabIndex = 2;
             this.label3.Text = "Tipo:";
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(208, 141);
+            this.btnAgregar.Image = global::Boutique1.Properties.Resources.save29;
+            this.btnAgregar.Location = new System.Drawing.Point(238, 111);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(75, 23);
+            this.btnAgregar.Size = new System.Drawing.Size(58, 51);
             this.btnAgregar.TabIndex = 3;
-            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.Text = ".";
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(127, 34);
+            this.txtUsuario.Location = new System.Drawing.Point(150, 20);
             this.txtUsuario.MaxLength = 50;
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(156, 20);
@@ -88,14 +92,14 @@
             this.cbTipo.Items.AddRange(new object[] {
             "Empleado",
             "Administrador"});
-            this.cbTipo.Location = new System.Drawing.Point(127, 99);
+            this.cbTipo.Location = new System.Drawing.Point(150, 84);
             this.cbTipo.Name = "cbTipo";
             this.cbTipo.Size = new System.Drawing.Size(156, 21);
             this.cbTipo.TabIndex = 5;
             // 
             // txtContrasenia
             // 
-            this.txtContrasenia.Location = new System.Drawing.Point(127, 66);
+            this.txtContrasenia.Location = new System.Drawing.Point(150, 52);
             this.txtContrasenia.MaxLength = 20;
             this.txtContrasenia.Name = "txtContrasenia";
             this.txtContrasenia.PasswordChar = '*';
@@ -106,7 +110,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(308, 176);
+            this.BackgroundImage = global::Boutique1.Properties.Resources.images;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(317, 177);
             this.Controls.Add(this.txtContrasenia);
             this.Controls.Add(this.cbTipo);
             this.Controls.Add(this.txtUsuario);

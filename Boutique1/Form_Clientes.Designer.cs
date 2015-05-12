@@ -34,13 +34,14 @@
             this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.enviarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.tipNuevo = new System.Windows.Forms.ToolTip(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
+            this.bGuardar = new System.Windows.Forms.Button();
             this.btnAyuda = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.bActualizar = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.bAgregar = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgClientes)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -98,11 +99,17 @@
             this.panel1.Size = new System.Drawing.Size(888, 368);
             this.panel1.TabIndex = 1;
             // 
+            // tipNuevo
+            // 
+            this.tipNuevo.Popup += new System.Windows.Forms.PopupEventHandler(this.tipNuevo_Popup);
+            // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.button2);
+            this.panel2.BackgroundImage = global::Boutique1.Properties.Resources.images;
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel2.Controls.Add(this.bGuardar);
             this.panel2.Controls.Add(this.btnAyuda);
-            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.bActualizar);
             this.panel2.Controls.Add(this.textBox1);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.bAgregar);
@@ -113,27 +120,38 @@
             this.panel2.Size = new System.Drawing.Size(150, 368);
             this.panel2.TabIndex = 4;
             // 
+            // bGuardar
+            // 
+            this.bGuardar.Image = global::Boutique1.Properties.Resources.save29;
+            this.bGuardar.Location = new System.Drawing.Point(38, 299);
+            this.bGuardar.Name = "bGuardar";
+            this.bGuardar.Size = new System.Drawing.Size(70, 56);
+            this.bGuardar.TabIndex = 14;
+            this.bGuardar.UseVisualStyleBackColor = true;
+            this.bGuardar.Click += new System.EventHandler(this.button2_Click);
+            // 
             // btnAyuda
             // 
             this.btnAyuda.AutoSize = true;
-            this.btnAyuda.Location = new System.Drawing.Point(30, 217);
+            this.btnAyuda.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAyuda.Image = global::Boutique1.Properties.Resources.question5;
+            this.btnAyuda.Location = new System.Drawing.Point(38, 227);
             this.btnAyuda.Name = "btnAyuda";
-            this.btnAyuda.Size = new System.Drawing.Size(75, 42);
+            this.btnAyuda.Size = new System.Drawing.Size(70, 56);
             this.btnAyuda.TabIndex = 13;
-            this.btnAyuda.Text = "Ayuda";
             this.btnAyuda.UseVisualStyleBackColor = true;
             this.btnAyuda.Click += new System.EventHandler(this.btnAyuda_Click);
             // 
-            // button1
+            // bActualizar
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(30, 160);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 40);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Actualizar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.bActualizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.bActualizar.Image = global::Boutique1.Properties.Resources.clockwise11;
+            this.bActualizar.Location = new System.Drawing.Point(38, 154);
+            this.bActualizar.Name = "bActualizar";
+            this.bActualizar.Size = new System.Drawing.Size(70, 56);
+            this.bActualizar.TabIndex = 5;
+            this.bActualizar.UseVisualStyleBackColor = true;
+            this.bActualizar.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // textBox1
             // 
@@ -146,32 +164,24 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.Control;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(18, 21);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 13);
+            this.label1.Size = new System.Drawing.Size(56, 16);
             this.label1.TabIndex = 3;
             this.label1.Text = "Buscar";
             // 
             // bAgregar
             // 
             this.bAgregar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.bAgregar.Location = new System.Drawing.Point(30, 101);
+            this.bAgregar.Image = global::Boutique1.Properties.Resources.documents29__1_;
+            this.bAgregar.Location = new System.Drawing.Point(38, 85);
             this.bAgregar.Name = "bAgregar";
-            this.bAgregar.Size = new System.Drawing.Size(75, 40);
+            this.bAgregar.Size = new System.Drawing.Size(70, 56);
             this.bAgregar.TabIndex = 1;
-            this.bAgregar.Text = "Nuevo";
             this.bAgregar.UseVisualStyleBackColor = true;
             this.bAgregar.Click += new System.EventHandler(this.bAgregar_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(30, 274);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 43);
-            this.button2.TabIndex = 14;
-            this.button2.Text = "Guardar";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Form_Clientes
             // 
@@ -201,9 +211,10 @@
         private System.Windows.Forms.Button bAgregar;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button bActualizar;
         private System.Windows.Forms.ToolStripMenuItem enviarToolStripMenuItem;
         private System.Windows.Forms.Button btnAyuda;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button bGuardar;
+        private System.Windows.Forms.ToolTip tipNuevo;
     }
 }

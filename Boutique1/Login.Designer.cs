@@ -40,9 +40,11 @@
             // 
             // salir
             // 
+            this.salir.BackColor = System.Drawing.Color.DarkSlateBlue;
             resources.ApplyResources(this.salir, "salir");
+            this.salir.ForeColor = System.Drawing.SystemColors.Window;
             this.salir.Name = "salir";
-            this.salir.UseVisualStyleBackColor = true;
+            this.salir.UseVisualStyleBackColor = false;
             this.salir.Click += new System.EventHandler(this.salir_Click);
             // 
             // txtUsuario
@@ -60,29 +62,38 @@
             // label2
             // 
             resources.ApplyResources(this.label2, "label2");
+            this.label2.BackColor = System.Drawing.SystemColors.Window;
+            this.label2.ForeColor = System.Drawing.Color.Navy;
             this.label2.Name = "label2";
             // 
             // label3
             // 
             resources.ApplyResources(this.label3, "label3");
+            this.label3.BackColor = System.Drawing.SystemColors.Window;
+            this.label3.ForeColor = System.Drawing.Color.Navy;
             this.label3.Name = "label3";
             // 
             // bEntrar
             // 
+            this.bEntrar.BackColor = System.Drawing.Color.DarkSlateBlue;
             resources.ApplyResources(this.bEntrar, "bEntrar");
+            this.bEntrar.ForeColor = System.Drawing.SystemColors.Window;
             this.bEntrar.Name = "bEntrar";
-            this.bEntrar.UseVisualStyleBackColor = true;
+            this.bEntrar.UseVisualStyleBackColor = false;
             this.bEntrar.Click += new System.EventHandler(this.bEntrar_Click);
             // 
             // label1
             // 
             resources.ApplyResources(this.label1, "label1");
+            this.label1.BackColor = System.Drawing.SystemColors.Window;
+            this.label1.ForeColor = System.Drawing.Color.Navy;
             this.label1.Name = "label1";
             // 
             // Login
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::Boutique1.Properties.Resources.l_088;
             this.Controls.Add(this.label1);
             this.Controls.Add(this.salir);
             this.Controls.Add(this.bEntrar);

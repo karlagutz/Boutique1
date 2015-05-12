@@ -197,5 +197,10 @@ namespace Boutique1
             }
         }
 
+        private void tipNuevo_Popup(object sender, PopupEventArgs e)
+        {
+
+        }
+
     }
 }

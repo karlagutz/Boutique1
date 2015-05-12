@@ -45,6 +45,7 @@
             this.txtAbono = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgApartados)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgApartados
@@ -94,22 +95,23 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(9, 15);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(42, 13);
+            this.label2.Size = new System.Drawing.Size(56, 14);
             this.label2.TabIndex = 5;
             this.label2.Text = "Cliente:";
             // 
             // txtNombreCliente
             // 
-            this.txtNombreCliente.Location = new System.Drawing.Point(140, 12);
+            this.txtNombreCliente.Location = new System.Drawing.Point(154, 12);
             this.txtNombreCliente.Name = "txtNombreCliente";
             this.txtNombreCliente.Size = new System.Drawing.Size(403, 20);
             this.txtNombreCliente.TabIndex = 6;
             // 
             // txtIDCliente
             // 
-            this.txtIDCliente.Location = new System.Drawing.Point(57, 12);
+            this.txtIDCliente.Location = new System.Drawing.Point(71, 12);
             this.txtIDCliente.Name = "txtIDCliente";
             this.txtIDCliente.Size = new System.Drawing.Size(77, 20);
             this.txtIDCliente.TabIndex = 7;
@@ -117,37 +119,39 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(12, 406);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 13);
+            this.label1.Size = new System.Drawing.Size(116, 14);
             this.label1.TabIndex = 8;
             this.label1.Text = "Saldo Disponible:";
             // 
             // lbSaldo
             // 
             this.lbSaldo.AutoSize = true;
-            this.lbSaldo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSaldo.Location = new System.Drawing.Point(107, 406);
+            this.lbSaldo.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSaldo.Location = new System.Drawing.Point(134, 406);
             this.lbSaldo.Name = "lbSaldo";
-            this.lbSaldo.Size = new System.Drawing.Size(68, 16);
+            this.lbSaldo.Size = new System.Drawing.Size(67, 14);
             this.lbSaldo.TabIndex = 9;
             this.lbSaldo.Text = "$0000.00";
             // 
             // bAbonar
             // 
-            this.bAbonar.Location = new System.Drawing.Point(622, 396);
+            this.bAbonar.Image = global::Boutique1.Properties.Resources.dollar178;
+            this.bAbonar.Location = new System.Drawing.Point(646, 389);
             this.bAbonar.Name = "bAbonar";
-            this.bAbonar.Size = new System.Drawing.Size(114, 39);
+            this.bAbonar.Size = new System.Drawing.Size(90, 49);
             this.bAbonar.TabIndex = 10;
-            this.bAbonar.Text = "Abonar";
             this.bAbonar.UseVisualStyleBackColor = true;
             this.bAbonar.Click += new System.EventHandler(this.bAbonar_Click);
             // 
             // bEditarCliente
             // 
-            this.bEditarCliente.Location = new System.Drawing.Point(181, 396);
+            this.bEditarCliente.Image = global::Boutique1.Properties.Resources.user168;
+            this.bEditarCliente.Location = new System.Drawing.Point(208, 396);
             this.bEditarCliente.Name = "bEditarCliente";
-            this.bEditarCliente.Size = new System.Drawing.Size(114, 39);
+            this.bEditarCliente.Size = new System.Drawing.Size(62, 39);
             this.bEditarCliente.TabIndex = 11;
             this.bEditarCliente.Text = "Editar Cliente";
             this.bEditarCliente.UseVisualStyleBackColor = true;
@@ -155,9 +159,10 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(395, 406);
+            this.label4.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(370, 408);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(92, 13);
+            this.label4.Size = new System.Drawing.Size(122, 14);
             this.label4.TabIndex = 12;
             this.label4.Text = "Cantidad a Pagar:";
             // 
@@ -171,6 +176,14 @@
             // 
             // panel1
             // 
+            this.panel1.BackgroundImage = global::Boutique1.Properties.Resources.images;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.txtIDCliente);
+            this.panel1.Controls.Add(this.bAbonar);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.txtNombreCliente);
+            this.panel1.Controls.Add(this.bEditarCliente);
+            this.panel1.Controls.Add(this.lbSaldo);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -183,14 +196,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(766, 445);
             this.Controls.Add(this.txtAbono);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.bEditarCliente);
-            this.Controls.Add(this.bAbonar);
-            this.Controls.Add(this.lbSaldo);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtNombreCliente);
-            this.Controls.Add(this.txtIDCliente);
             this.Controls.Add(this.dgApartados);
             this.Controls.Add(this.panel1);
             this.IsMdiContainer = true;
@@ -199,6 +206,8 @@
             this.Text = "Apartados";
             this.Load += new System.EventHandler(this.Form_Apartados_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgApartados)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

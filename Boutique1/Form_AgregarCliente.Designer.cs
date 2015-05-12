@@ -44,7 +44,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(56, 15);
+            this.label1.Location = new System.Drawing.Point(56, 28);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(47, 13);
             this.label1.TabIndex = 0;
@@ -52,7 +52,9 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(106, 13);
+            this.txtNombre.BackColor = System.Drawing.SystemColors.Window;
+            this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNombre.Location = new System.Drawing.Point(106, 25);
             this.txtNombre.MaxLength = 50;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(242, 20);
@@ -60,7 +62,7 @@
             // 
             // txtTelefono
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(106, 108);
+            this.txtTelefono.Location = new System.Drawing.Point(106, 120);
             this.txtTelefono.Mask = "(999)000-0000";
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(100, 20);
@@ -69,7 +71,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(42, 111);
+            this.label2.Location = new System.Drawing.Point(51, 127);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 13);
             this.label2.TabIndex = 3;
@@ -78,7 +80,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(48, 46);
+            this.label4.Location = new System.Drawing.Point(48, 61);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(55, 13);
             this.label4.TabIndex = 5;
@@ -87,7 +89,7 @@
             // 
             // txtDireccion
             // 
-            this.txtDireccion.Location = new System.Drawing.Point(106, 44);
+            this.txtDireccion.Location = new System.Drawing.Point(106, 56);
             this.txtDireccion.MaxLength = 100;
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(242, 20);
@@ -95,17 +97,17 @@
             // 
             // bAgregar
             // 
-            this.bAgregar.Location = new System.Drawing.Point(117, 205);
+            this.bAgregar.Image = global::Boutique1.Properties.Resources.save29;
+            this.bAgregar.Location = new System.Drawing.Point(254, 126);
             this.bAgregar.Name = "bAgregar";
-            this.bAgregar.Size = new System.Drawing.Size(75, 23);
+            this.bAgregar.Size = new System.Drawing.Size(75, 51);
             this.bAgregar.TabIndex = 9;
-            this.bAgregar.Text = "Agregar";
             this.bAgregar.UseVisualStyleBackColor = true;
             this.bAgregar.Click += new System.EventHandler(this.button1_Click);
             // 
             // txtcorreo
             // 
-            this.txtcorreo.Location = new System.Drawing.Point(106, 78);
+            this.txtcorreo.Location = new System.Drawing.Point(106, 90);
             this.txtcorreo.MaxLength = 50;
             this.txtcorreo.Name = "txtcorreo";
             this.txtcorreo.Size = new System.Drawing.Size(183, 20);
@@ -114,7 +116,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(56, 78);
+            this.label5.Location = new System.Drawing.Point(62, 94);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(41, 13);
             this.label5.TabIndex = 10;
@@ -123,7 +125,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(15, 149);
+            this.label3.Location = new System.Drawing.Point(15, 160);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(88, 13);
             this.label3.TabIndex = 4;
@@ -131,7 +133,7 @@
             // 
             // txtCredito
             // 
-            this.txtCredito.Location = new System.Drawing.Point(106, 144);
+            this.txtCredito.Location = new System.Drawing.Point(106, 156);
             this.txtCredito.Mask = "99999";
             this.txtCredito.Name = "txtCredito";
             this.txtCredito.Size = new System.Drawing.Size(100, 20);
@@ -142,10 +144,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(372, 260);
+            this.BackgroundImage = global::Boutique1.Properties.Resources.images;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(355, 215);
+            this.Controls.Add(this.bAgregar);
             this.Controls.Add(this.txtcorreo);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.bAgregar);
             this.Controls.Add(this.txtCredito);
             this.Controls.Add(this.txtDireccion);
             this.Controls.Add(this.label4);
@@ -154,6 +158,7 @@
             this.Controls.Add(this.txtTelefono);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "Form_AgregarCliente";
             this.Text = "Nuevo Cliente";

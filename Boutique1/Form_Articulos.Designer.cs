@@ -30,21 +30,21 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dgArticulos = new System.Windows.Forms.DataGridView();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.enviarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.btnAyuda = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.bAgregar = new System.Windows.Forms.Button();
-            this.dgArticulos = new System.Windows.Forms.DataGridView();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.enviarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgArticulos)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -56,73 +56,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(702, 334);
             this.panel1.TabIndex = 2;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.button2);
-            this.panel2.Controls.Add(this.btnAyuda);
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Controls.Add(this.textBox1);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.bAgregar);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(552, 0);
-            this.panel2.MaximumSize = new System.Drawing.Size(150, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(150, 334);
-            this.panel2.TabIndex = 3;
-            // 
-            // btnAyuda
-            // 
-            this.btnAyuda.AutoSize = true;
-            this.btnAyuda.Location = new System.Drawing.Point(30, 214);
-            this.btnAyuda.Name = "btnAyuda";
-            this.btnAyuda.Size = new System.Drawing.Size(75, 42);
-            this.btnAyuda.TabIndex = 6;
-            this.btnAyuda.Text = "Ayuda";
-            this.btnAyuda.UseVisualStyleBackColor = true;
-            this.btnAyuda.Click += new System.EventHandler(this.btnAyuda_Click);
-            // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(30, 157);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 40);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Actualizar ";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(12, 46);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(117, 20);
-            this.textBox1.TabIndex = 4;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(18, 21);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Buscar";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // bAgregar
-            // 
-            this.bAgregar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.bAgregar.Location = new System.Drawing.Point(30, 101);
-            this.bAgregar.Name = "bAgregar";
-            this.bAgregar.Size = new System.Drawing.Size(75, 40);
-            this.bAgregar.TabIndex = 1;
-            this.bAgregar.Text = "Nuevo";
-            this.bAgregar.UseVisualStyleBackColor = true;
-            this.bAgregar.Click += new System.EventHandler(this.bAgregar_Click);
             // 
             // dgArticulos
             // 
@@ -165,15 +98,85 @@
             this.enviarToolStripMenuItem.Text = "Enviar";
             this.enviarToolStripMenuItem.Click += new System.EventHandler(this.enviarToolStripMenuItem_Click);
             // 
+            // panel2
+            // 
+            this.panel2.BackgroundImage = global::Boutique1.Properties.Resources.images;
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel2.Controls.Add(this.button2);
+            this.panel2.Controls.Add(this.btnAyuda);
+            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.bAgregar);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel2.Location = new System.Drawing.Point(552, 0);
+            this.panel2.MaximumSize = new System.Drawing.Size(150, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(150, 334);
+            this.panel2.TabIndex = 3;
+            // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(30, 272);
+            this.button2.Image = global::Boutique1.Properties.Resources.save29;
+            this.button2.Location = new System.Drawing.Point(36, 258);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 40);
+            this.button2.Size = new System.Drawing.Size(75, 53);
             this.button2.TabIndex = 7;
-            this.button2.Text = "Guardar";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // btnAyuda
+            // 
+            this.btnAyuda.AutoSize = true;
+            this.btnAyuda.Image = global::Boutique1.Properties.Resources.question5;
+            this.btnAyuda.Location = new System.Drawing.Point(36, 197);
+            this.btnAyuda.Name = "btnAyuda";
+            this.btnAyuda.Size = new System.Drawing.Size(75, 53);
+            this.btnAyuda.TabIndex = 6;
+            this.btnAyuda.UseVisualStyleBackColor = true;
+            this.btnAyuda.Click += new System.EventHandler(this.btnAyuda_Click);
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.Image = global::Boutique1.Properties.Resources.clockwise11;
+            this.button1.Location = new System.Drawing.Point(36, 136);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 53);
+            this.button1.TabIndex = 5;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox1.Location = new System.Drawing.Point(14, 41);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(117, 20);
+            this.textBox1.TabIndex = 4;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(18, 21);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(52, 14);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Buscar";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // bAgregar
+            // 
+            this.bAgregar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.bAgregar.Image = global::Boutique1.Properties.Resources.documents29__1_;
+            this.bAgregar.Location = new System.Drawing.Point(36, 75);
+            this.bAgregar.Name = "bAgregar";
+            this.bAgregar.Size = new System.Drawing.Size(75, 53);
+            this.bAgregar.TabIndex = 1;
+            this.bAgregar.UseVisualStyleBackColor = true;
+            this.bAgregar.Click += new System.EventHandler(this.bAgregar_Click);
             // 
             // Form_Articulos
             // 
@@ -186,10 +189,10 @@
             this.Text = "Artículos";
             this.Load += new System.EventHandler(this.Form_Articulos_Load);
             this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgArticulos)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }

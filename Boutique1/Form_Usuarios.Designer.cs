@@ -32,12 +32,12 @@
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgUsuarios = new System.Windows.Forms.DataGridView();
-            this.btnAyuda = new System.Windows.Forms.Button();
-            this.btnActualizar = new System.Windows.Forms.Button();
-            this.bAgregar = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.editartoolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.Eliminar = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnAyuda = new System.Windows.Forms.Button();
+            this.btnActualizar = new System.Windows.Forms.Button();
+            this.bAgregar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgUsuarios)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -55,9 +55,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(378, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 13);
+            this.label1.Size = new System.Drawing.Size(58, 16);
             this.label1.TabIndex = 9;
             this.label1.Text = "Buscar";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -78,46 +79,13 @@
             this.dgUsuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgArticulos_CellContentClick);
             this.dgUsuarios.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dgUsuarios_MouseDown);
             // 
-            // btnAyuda
-            // 
-            this.btnAyuda.AutoSize = true;
-            this.btnAyuda.Location = new System.Drawing.Point(381, 192);
-            this.btnAyuda.Name = "btnAyuda";
-            this.btnAyuda.Size = new System.Drawing.Size(75, 42);
-            this.btnAyuda.TabIndex = 12;
-            this.btnAyuda.Text = "Ayuda";
-            this.btnAyuda.UseVisualStyleBackColor = true;
-            this.btnAyuda.Click += new System.EventHandler(this.btnAyuda_Click);
-            // 
-            // btnActualizar
-            // 
-            this.btnActualizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnActualizar.Location = new System.Drawing.Point(381, 135);
-            this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(75, 40);
-            this.btnActualizar.TabIndex = 11;
-            this.btnActualizar.Text = "Actualizar ";
-            this.btnActualizar.UseVisualStyleBackColor = true;
-            this.btnActualizar.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // bAgregar
-            // 
-            this.bAgregar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.bAgregar.Location = new System.Drawing.Point(381, 79);
-            this.bAgregar.Name = "bAgregar";
-            this.bAgregar.Size = new System.Drawing.Size(75, 40);
-            this.bAgregar.TabIndex = 8;
-            this.bAgregar.Text = "Nuevo";
-            this.bAgregar.UseVisualStyleBackColor = true;
-            this.bAgregar.Click += new System.EventHandler(this.bAgregar_Click);
-            // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.editartoolStripMenuItem1,
             this.Eliminar});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 70);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(118, 48);
             this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
             // editartoolStripMenuItem1
@@ -130,14 +98,49 @@
             // Eliminar
             // 
             this.Eliminar.Name = "Eliminar";
-            this.Eliminar.Size = new System.Drawing.Size(152, 22);
+            this.Eliminar.Size = new System.Drawing.Size(117, 22);
             this.Eliminar.Text = "Eliminar";
             this.Eliminar.Click += new System.EventHandler(this.Eliminar_Click);
+            // 
+            // btnAyuda
+            // 
+            this.btnAyuda.AutoSize = true;
+            this.btnAyuda.Image = global::Boutique1.Properties.Resources.question5;
+            this.btnAyuda.Location = new System.Drawing.Point(401, 186);
+            this.btnAyuda.Name = "btnAyuda";
+            this.btnAyuda.Size = new System.Drawing.Size(75, 48);
+            this.btnAyuda.TabIndex = 12;
+            this.btnAyuda.UseVisualStyleBackColor = true;
+            this.btnAyuda.Click += new System.EventHandler(this.btnAyuda_Click);
+            // 
+            // btnActualizar
+            // 
+            this.btnActualizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnActualizar.Image = global::Boutique1.Properties.Resources.clockwise11;
+            this.btnActualizar.Location = new System.Drawing.Point(401, 129);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(75, 49);
+            this.btnActualizar.TabIndex = 11;
+            this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // bAgregar
+            // 
+            this.bAgregar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.bAgregar.Image = global::Boutique1.Properties.Resources.documents29__1_;
+            this.bAgregar.Location = new System.Drawing.Point(401, 73);
+            this.bAgregar.Name = "bAgregar";
+            this.bAgregar.Size = new System.Drawing.Size(75, 50);
+            this.bAgregar.TabIndex = 8;
+            this.bAgregar.UseVisualStyleBackColor = true;
+            this.bAgregar.Click += new System.EventHandler(this.bAgregar_Click);
             // 
             // Form_Usuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::Boutique1.Properties.Resources.images;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(507, 246);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.label1);
